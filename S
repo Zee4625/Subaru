@@ -1,0 +1,78 @@
+local splib = loadstring(game:HttpGet("https://raw.githubusercontent.com/as6cd0/SP_Hub/refs/heads/main/splibv2"))()
+
+-- Configurarea Ferestrei cu culori Subaru (Albastru și Galben)
+local Window = splib:MakeWindow({
+    Name = "Subaru Hub",
+    HidePremium = false,
+    SaveConfig = true,
+    Setting = true,
+    ToggleIcon = "rbxassetid://83114982417764",
+    ConfigFolder = "SubaruConfigs",
+    CloseCallback = true
+})
+
+-- Schimbăm tema bibliotecii pentru culorile specifice
+-- Albastru închis (WR Blue) și accente de Galben
+splib:SetTheme({
+    MainColor = Color3.fromRGB(0, 51, 153),      -- Subaru WR Blue
+    AccentColor = Color3.fromRGB(255, 204, 0),   -- Subaru Gold/Yellow
+    BackgroundColor = Color3.fromRGB(15, 15, 15),
+    TextColor = Color3.fromRGB(255, 255, 255)
+})
+
+local MainTab = Window:MakeTab({
+    IsMobile = false,
+    Name = "Main / Player",
+    Icon = "rbxassetid://4483345998"
+})
+
+MainTab:AddSection({
+    Name = "Player Settings"
+})
+
+-- Exemplu de funcție pentru viteză (WalkSpeed)
+MainTab:AddSlider({
+    Name = "WalkSpeed (Turbo)",
+    Min = 16,
+    Max = 250,
+    Default = 16,
+    Increment = 1,
+    ValueName = "km/h",
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end    
+})
+
+-- Exemplu de funcție pentru săritură (JumpPower)
+MainTab:AddSlider({
+    Name = "JumpPower",
+    Min = 50,
+    Max = 500,
+    Default = 50,
+    Increment = 1,
+    ValueName = "Power",
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+    end    
+})
+
+local MiscTab = Window:MakeTab({
+    IsMobile = false,
+    Name = "Misc",
+    Icon = "rbxassetid://4483345998"
+})
+
+MiscTab:AddButton({
+    Name = "Reset Character",
+    Callback = function()
+        game.Players.LocalPlayer.Character:BreakJoints()
+    end
+})
+
+-- Notificare de pornire
+splib:MakeNotification({
+    Name = "Subaru Hub",
+    Content = "Scriptul a fost încărcat cu succes!",
+    Image = "rbxassetid://6026568198",
+    Time = 5
+})
