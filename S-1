@@ -1,0 +1,127 @@
+--[[
+    SUBARU HUB - Official Script
+    Icon ID: 128979818272596
+]]
+
+local splib = loadstring(game:HttpGet("https://raw.githubusercontent.com/as6cd0/SP_Hub/refs/heads/main/splibv2"))()
+
+-- Configurare Fereastră Principală
+local Window = splib:MakeWindow({
+    Name = "Subaru Hub",
+    HidePremium = false,
+    SaveConfig = true,
+    Setting = true,
+    ToggleIcon = "rbxassetid://111710478062549", -- Iconița ta specificată
+    ConfigFolder = "SubaruHubConfigs",
+    CloseCallback = true
+})
+
+-- Setare Temă Subaru (WR Blue & Gold Accent)
+splib:SetTheme({
+    MainColor = Color3.fromRGB(0, 51, 153),      -- Subaru Blue
+    AccentColor = Color3.fromRGB(255, 204, 0),   -- Subaru Gold
+    BackgroundColor = Color3.fromRGB(15, 15, 15),
+    TextColor = Color3.fromRGB(255, 255, 255)
+})
+
+--- ### TAB: INFO ### ---
+local InfoTab = Window:MakeTab({
+    IsMobile = true,
+    Name = "Info",
+    Icon = "rbxassetid://4483345998"
+})
+
+InfoTab:AddSection({
+    Name = "Subaru Hub Status"
+})
+
+InfoTab:AddLabel("Acesta este Subaru Hub")
+
+InfoTab:AddParagraph("Informații", "Acest script este creat pentru performanță optimă și viteză. Bine ai venit în comunitatea Subaru Hub!")
+
+InfoTab:AddLabel("Versiune: 1.0.0")
+InfoTab:AddLabel("Status: Nedetectat")
+
+--- ### TAB: MAIN (PLAYER) ### ---
+local MainTab = Window:MakeTab({
+    IsMobile = true,
+    Name = "Main / Player",
+    Icon = "rbxassetid://4483345998"
+})
+
+MainTab:AddSection({
+    Name = "Movement Mods"
+})
+
+-- WalkSpeed
+MainTab:AddSlider({
+    Name = "WalkSpeed",
+    Min = 16,
+    Max = 300,
+    Default = 16,
+    Increment = 1,
+    ValueName = "km/h",
+    Callback = function(Value)
+        pcall(function()
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+        end)
+    end    
+})
+
+-- JumpPower
+MainTab:AddSlider({
+    Name = "JumpPower",
+    Min = 50,
+    Max = 500,
+    Default = 50,
+    Increment = 1,
+    ValueName = "Power",
+    Callback = function(Value)
+        pcall(function()
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+        end)
+    end    
+})
+
+-- Infinite Jump
+MainTab:AddToggle({
+    Name = "Infinite Jump",
+    Default = false,
+    Callback = function(Value)
+        _G.InfJump = Value
+        game:GetService("UserInputService").JumpRequest:Connect(function()
+            if _G.InfJump then
+                game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+            end
+        end)
+    end
+})
+
+--- ### TAB: MISC ### ---
+local MiscTab = Window:MakeTab({
+    IsMobile = true,
+    Name = "Misc",
+    Icon = "rbxassetid://4483345998"
+})
+
+MiscTab:AddButton({
+    Name = "Reset Character",
+    Callback = function()
+        game.Players.LocalPlayer.Character:BreakJoints()
+    end
+})
+
+MiscTab:AddButton({
+    Name = "Rejoin Game",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+    end
+})
+
+-- Notificare de pornire
+splib:MakeNotification({
+    Name = "Subaru Hub",
+    Content = "Scriptul a fost încărcat cu succes!",
+    Image = "rbxassetid://128979818272596",
+    Time = 5
+})
