@@ -1,9 +1,12 @@
 --[[
-    SUBARU HUB - Official Script
-    Theme: WR Blue & Gold
+    SUBARU HUB - Official Hybrid Script (PC & Mobile)
+    Icon ID: 111710478062549
 ]]
 
 local splib = loadstring(game:HttpGet("https://raw.githubusercontent.com/as6cd0/SP_Hub/refs/heads/main/splibv2"))()
+
+-- Detectăm dacă utilizatorul este pe Mobile sau PC
+local isOnMobile = game:GetService("UserInputService").TouchEnabled
 
 -- Main Window Configuration
 local Window = splib:MakeWindow({
@@ -11,12 +14,12 @@ local Window = splib:MakeWindow({
     HidePremium = false,
     SaveConfig = true,
     Setting = true,
-    ToggleIcon = "rbxassetid://111710478062549",
+    ToggleIcon = "rbxassetid://111710478062549", -- Butonul pentru Mobile
     ConfigFolder = "SubaruHubConfigs",
     CloseCallback = true
 })
 
--- Subaru Branding Theme (WR Blue & Gold)
+-- Subaru Branding Theme
 splib:SetTheme({
     MainColor = Color3.fromRGB(0, 51, 153),      -- Subaru Blue
     AccentColor = Color3.fromRGB(255, 204, 0),   -- Subaru Gold
@@ -26,32 +29,25 @@ splib:SetTheme({
 
 --- ### TAB: INFO ### ---
 local InfoTab = Window:MakeTab({
-    IsMobile = true,
+    IsMobile = isOnMobile, -- Se ajustează automat
     Name = "Info",
     Icon = "rbxassetid://4483345998"
 })
 
-InfoTab:AddSection({
-    Name = "Subaru Hub Status"
-})
-
+InfoTab:AddSection({ Name = "Subaru Hub Status" })
 InfoTab:AddLabel("This is Subaru Hub")
-
-InfoTab:AddParagraph("Information", "This script is built for optimal performance and speed. Welcome to the Subaru Hub community!")
-
-InfoTab:AddLabel("Version: 1.0.0")
+InfoTab:AddParagraph("Platform Detected:", isOnMobile and "Mobile Device" or "PC / Emulator")
+InfoTab:AddLabel("Version: 1.0.1")
 InfoTab:AddLabel("Status: Undetected")
 
---- ### TAB: COOL (LOADSTRINGS) ### ---
+--- ### TAB: COOL (EXTERNAL SCRIPTS) ### ---
 local CoolTab = Window:MakeTab({
-    IsMobile = true,
+    IsMobile = isOnMobile,
     Name = "Cool",
     Icon = "rbxassetid://4483345998"
 })
 
-CoolTab:AddSection({
-    Name = "External Scripts"
-})
+CoolTab:AddSection({ Name = "Blox Fruits Scripts" })
 
 CoolTab:AddButton({
     Name = "Chara",
@@ -69,46 +65,31 @@ CoolTab:AddButton({
 
 --- ### TAB: MAIN (PLAYER) ### ---
 local MainTab = Window:MakeTab({
-    IsMobile = true,
+    IsMobile = isOnMobile,
     Name = "Main / Player",
     Icon = "rbxassetid://4483345998"
 })
 
-MainTab:AddSection({
-    Name = "Movement Mods"
-})
+MainTab:AddSection({ Name = "Movement Mods" })
 
--- WalkSpeed
 MainTab:AddSlider({
     Name = "WalkSpeed",
-    Min = 16,
-    Max = 300,
-    Default = 16,
-    Increment = 1,
+    Min = 16, Max = 300, Default = 16, Increment = 1,
     ValueName = "km/h",
     Callback = function(Value)
-        pcall(function()
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-        end)
+        pcall(function() game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value end)
     end    
 })
 
--- JumpPower
 MainTab:AddSlider({
     Name = "JumpPower",
-    Min = 50,
-    Max = 500,
-    Default = 50,
-    Increment = 1,
+    Min = 50, Max = 500, Default = 50, Increment = 1,
     ValueName = "Power",
     Callback = function(Value)
-        pcall(function()
-            game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-        end)
+        pcall(function() game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value end)
     end    
 })
 
--- Infinite Jump
 MainTab:AddToggle({
     Name = "Infinite Jump",
     Default = false,
@@ -116,7 +97,9 @@ MainTab:AddToggle({
         _G.InfJump = Value
         game:GetService("UserInputService").JumpRequest:Connect(function()
             if _G.InfJump then
-                game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+                pcall(function()
+                    game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+                end)
             end
         end)
     end
@@ -124,16 +107,14 @@ MainTab:AddToggle({
 
 --- ### TAB: MISC ### ---
 local MiscTab = Window:MakeTab({
-    IsMobile = true,
+    IsMobile = isOnMobile,
     Name = "Misc",
     Icon = "rbxassetid://4483345998"
 })
 
 MiscTab:AddButton({
     Name = "Reset Character",
-    Callback = function()
-        game.Players.LocalPlayer.Character:BreakJoints()
-    end
+    Callback = function() game.Players.LocalPlayer.Character:BreakJoints() end
 })
 
 MiscTab:AddButton({
@@ -146,7 +127,7 @@ MiscTab:AddButton({
 -- Startup Notification
 splib:MakeNotification({
     Name = "Subaru Hub",
-    Content = "Script loaded successfully!",
+    Content = "Successfully loaded for " .. (isOnMobile and "Mobile" or "PC") .. "!",
     Image = "rbxassetid://128979818272596",
     Time = 5
 })
