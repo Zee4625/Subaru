@@ -1,11 +1,11 @@
 --[[
     SUBARU HUB - Official Hybrid Script (PC & Mobile)
-    Icon ID: 111710478062549
+    Theme: WR Blue & Gold
 ]]
 
 local splib = loadstring(game:HttpGet("https://raw.githubusercontent.com/as6cd0/SP_Hub/refs/heads/main/splibv2"))()
 
--- Detectăm dacă utilizatorul este pe Mobile sau PC
+-- Automatic Platform Detection
 local isOnMobile = game:GetService("UserInputService").TouchEnabled
 
 -- Main Window Configuration
@@ -14,12 +14,12 @@ local Window = splib:MakeWindow({
     HidePremium = false,
     SaveConfig = true,
     Setting = true,
-    ToggleIcon = "rbxassetid://111710478062549", -- Butonul pentru Mobile
+    ToggleIcon = "rbxassetid://111710478062549",
     ConfigFolder = "SubaruHubConfigs",
     CloseCallback = true
 })
 
--- Subaru Branding Theme
+-- Subaru Branding Theme (WR Blue & Gold)
 splib:SetTheme({
     MainColor = Color3.fromRGB(0, 51, 153),      -- Subaru Blue
     AccentColor = Color3.fromRGB(255, 204, 0),   -- Subaru Gold
@@ -29,25 +29,25 @@ splib:SetTheme({
 
 --- ### TAB: INFO ### ---
 local InfoTab = Window:MakeTab({
-    IsMobile = isOnMobile, -- Se ajustează automat
+    IsMobile = isOnMobile,
     Name = "Info",
     Icon = "rbxassetid://4483345998"
 })
 
 InfoTab:AddSection({ Name = "Subaru Hub Status" })
 InfoTab:AddLabel("This is Subaru Hub")
-InfoTab:AddParagraph("Platform Detected:", isOnMobile and "Mobile Device" or "PC / Emulator")
-InfoTab:AddLabel("Version: 1.0.1")
+InfoTab:AddParagraph("Platform:", isOnMobile and "Mobile Device" or "PC / Emulator")
+InfoTab:AddLabel("Version: 1.0.2")
 InfoTab:AddLabel("Status: Undetected")
 
---- ### TAB: COOL (EXTERNAL SCRIPTS) ### ---
+--- ### TAB: COOL (LOADSTRINGS) ### ---
 local CoolTab = Window:MakeTab({
     IsMobile = isOnMobile,
     Name = "Cool",
     Icon = "rbxassetid://4483345998"
 })
 
-CoolTab:AddSection({ Name = "Blox Fruits Scripts" })
+CoolTab:AddSection({ Name = "External Scripts" })
 
 CoolTab:AddButton({
     Name = "Chara",
@@ -60,6 +60,13 @@ CoolTab:AddButton({
     Name = "Flash",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Zee4625/Blox-Fruits/refs/heads/main/Flash1"))()
+    end
+})
+
+CoolTab:AddButton({
+    Name = "Speed Force",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zee4625/Subaru/refs/heads/main/speed-force"))()
     end
 })
 
@@ -127,7 +134,7 @@ MiscTab:AddButton({
 -- Startup Notification
 splib:MakeNotification({
     Name = "Subaru Hub",
-    Content = "Successfully loaded for " .. (isOnMobile and "Mobile" or "PC") .. "!",
+    Content = "Successfully loaded!",
     Image = "rbxassetid://128979818272596",
     Time = 5
 })
