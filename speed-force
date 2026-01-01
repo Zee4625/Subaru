@@ -56,7 +56,7 @@ local FLASHES = {
 		TrailColor = Color3.fromRGB(255,60,60),
 		Particle = "rbxassetid://114078620420379",
 		ActivateSound = "rbxassetid://17873732848",
-		LoopSound = "rbxassetid://127963242920916"
+		LoopSound = "rbxassetid://71123357599630"
 	}
 }
 
@@ -129,8 +129,8 @@ local function setVisuals(enable, color)
 
 	TweenService:Create(blur, TWEEN_INFO, {Size = enable and 6 or 0}):Play()
 	TweenService:Create(colorCorrection, TWEEN_INFO, {
-		Contrast = enable and 0.15 or 0,
-		Saturation = enable and 0.15 or 0,
+		Contrast = enable and 0.12 or 0,
+		Saturation = enable and 0.12 or 0,
 		TintColor = enable and color or Color3.new(1,1,1)
 	}):Play()
 
