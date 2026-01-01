@@ -37,37 +37,48 @@ local InfoTab = Window:MakeTab({
 InfoTab:AddSection({ Name = "Subaru Hub Status" })
 InfoTab:AddLabel("This is Subaru Hub")
 InfoTab:AddParagraph("Platform:", isOnMobile and "Mobile Device" or "PC / Emulator")
-InfoTab:AddLabel("Version: 1.0.2")
+InfoTab:AddLabel("Version: 1.0.3")
 InfoTab:AddLabel("Status: Undetected")
 
---- ### TAB: COOL (LOADSTRINGS) ### ---
+--- ### TAB: COOL (EXTERNAL SCRIPTS) ### ---
 local CoolTab = Window:MakeTab({
     IsMobile = isOnMobile,
     Name = "Cool",
     Icon = "rbxassetid://4483345998"
 })
 
-CoolTab:AddSection({ Name = "External Scripts" })
+CoolTab:AddSection({ Name = "Script Management" })
 
-CoolTab:AddButton({
-    Name = "Chara",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zee4625/Blox-Fruits/refs/heads/main/CHARA-NEW!"))()
-    end
+-- Animation R6 Dropdown
+CoolTab:AddDropdown({
+    Name = "Animation R6",
+    Default = "Select Animation",
+    Options = {"Chara"},
+    Callback = function(Value)
+        if Value == "Chara" then
+            pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Zee4625/Blox-Fruits/refs/heads/main/CHARA-NEW!"))()
+            end)
+        end
+    end    
 })
 
-CoolTab:AddButton({
+-- Flash Dropdown
+CoolTab:AddDropdown({
     Name = "Flash",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zee4625/Blox-Fruits/refs/heads/main/Flash1"))()
-    end
-})
-
-CoolTab:AddButton({
-    Name = "Speed Force",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zee4625/Subaru/refs/heads/main/speed-force"))()
-    end
+    Default = "Select Script",
+    Options = {"Flash", "Speed Force"},
+    Callback = function(Value)
+        if Value == "Flash" then
+            pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Zee4625/Blox-Fruits/refs/heads/main/Flash1"))()
+            end)
+        elseif Value == "Speed Force" then
+            pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Zee4625/Subaru/refs/heads/main/speed-force"))()
+            end)
+        end
+    end    
 })
 
 --- ### TAB: MAIN (PLAYER) ### ---
@@ -134,7 +145,7 @@ MiscTab:AddButton({
 -- Startup Notification
 splib:MakeNotification({
     Name = "Subaru Hub",
-    Content = "Successfully loaded!",
+    Content = "Successfully loaded for " .. (isOnMobile and "Mobile" or "PC") .. "!",
     Image = "rbxassetid://128979818272596",
     Time = 5
 })
