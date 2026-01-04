@@ -1,0 +1,2636 @@
+-- ts file was generated at discord.gg/25ms
+
+
+local v1 = game:GetService("Players").LocalPlayer
+local function v4(p2)
+    local v3 = p2:WaitForChild("Humanoid")
+    v3:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, false)
+    v3:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false)
+end
+v1.CharacterAdded:Connect(v4)
+if v1.Character then
+    v4(v1.Character)
+end
+game:GetService("RunService").RenderStepped:Connect(function()
+    if type(sethiddenproperty) ~= "function" then
+        if type(setsimulationradius) ~= "function" then
+            DarkLib:Notification({
+                Title = "Your Executor Does Not Fully Support trolling features section.",
+                Icon = "check_circle",
+                ImageSource = "Material",
+                Content = "if you can use another Executor",
+                Duration = 12
+            })
+        else
+            pcall(function()
+                setsimulationradius(math.huge)
+            end)
+        end
+    else
+        pcall(function()
+            sethiddenproperty(Game:GetService("Players").LocalPlayer, "SimulationRadius", math.huge)
+        end)
+    end
+end)
+local v5 = workspace:FindFirstChild("ItemFolder")
+if not v5 then
+    local v6, v7, v8 = pairs(workspace:GetDescendants())
+    while true do
+        local v9
+        v8, v9 = v6(v7, v8)
+        if v8 == nil then
+            break
+        end
+        if v9.Name == "ItemPickupScript" or v9.Name == "NewItemPickupScript" then
+            v5 = v9.Parent.Parent
+            break
+        end
+    end
+end
+if v5 then
+    v5.Name = "ItemFolder1"
+end
+local v10 = loadstring(game:HttpGet("https://raw.githubusercontent.com/totallynothimplayz/DarklibV6/refs/heads/main/Source.txt", true))()
+local v11 = v10.CreateWindow
+local v12 = {
+    Name = "Piggy V2.7.5 | ZeeHub ",
+    Subtitle = "Made By Zeron",
+    LogoID = "82858721461099",
+    Size = UDim2.new(0.65, 0, 0.7, 0),
+    LoadingEnabled = true,
+    LoadingTitle = "ZeeHub",
+    LoadingSubtitle = "Please Wait...",
+    ConfigSettings = {
+        RootFolder = nil,
+        ConfigFolder = "ScriptFolderName"
+    },
+    KeySystem = false,
+    KeySettings = {
+        Title = "Hub Name ",
+        Subtitle = " Key System",
+        Note = "Enter the Key Obtained for the Hub Name",
+        SaveInRoot = false,
+        SaveKey = true,
+        Key = {
+            "You Key"
+        },
+        SecondAction = {
+            Enabled = false,
+            Type = "Discord",
+            Parameter = "You Discord Invite"
+        }
+    }
+}
+local v13 = v11(v10, v12)
+v10:Notification({
+    Title = "Made By Zeron",
+    Icon = "check_circle",
+    ImageSource = "Material",
+    Content = "Credits To Totallynothimplayz",
+    Duration = 7
+})
+local v14 = v13:CreateTab({
+    Name = "Main",
+    Icon = "home",
+    ImageSource = "Material",
+    ShowTitle = true
+})
+local v15 = v13:CreateTab({
+    Name = "Troll",
+    Icon = "help-circle",
+    ImageSource = "Material",
+    ShowTitle = true
+})
+local v16 = v13:CreateTab({
+    Name = "Esp",
+    Icon = "search",
+    ImageSource = "Material",
+    ShowTitle = true
+})
+local v17 = v13:CreateTab({
+    Name = "Build Mode",
+    Icon = "hammer",
+    ImageSource = "Material",
+    ShowTitle = true
+})
+local v18 = v13:CreateTab({
+    Name = "Quests",
+    Icon = "10709789960",
+    ImageSource = "Custom",
+    ShowTitle = true
+})
+local v19 = v13:CreateTab({
+    Name = "Other",
+    Icon = "10723396107",
+    ImageSource = "Custom",
+    ShowTitle = true
+})
+local v20 = v13:CreateTab({
+    Name = "Secrets",
+    Icon = "10709818626",
+    ImageSource = "Custom",
+    ShowTitle = true
+})
+local v21 = v13:CreateTab({
+    Name = "Credits",
+    Icon = "info",
+    ImageSource = "Material",
+    ShowTitle = true
+})
+local v22 = v13:CreateTab({
+    Name = "Update Logs",
+    Icon = "home",
+    ImageSource = "Material",
+    ShowTitle = true
+})
+v14:CreateSection("Main Things")
+v14:CreateParagraph({
+    Title = "Important!!!",
+    Text = "You Should Execute The Script On The Main Menu So It Loads Correctly And So All The Features Work This Applies To All Features."
+})
+v14:CreateToggle({
+    Name = "God Mode",
+    Description = "For Piggy Only",
+    CurrentValue = false,
+    Callback = function(p23)
+        if p23 then
+            _G.Clicker = true
+            while _G.Clicker == true do
+                local v24 = workspace:GetDescendants()
+                local v25, v26, v27 = ipairs(v24)
+                while true do
+                    local v28
+                    v27, v28 = v25(v26, v27)
+                    if v27 == nil then
+                        break
+                    end
+                    if v28:FindFirstChild("Enemy") and (v28:FindFirstChild("HumanoidRootPart") and not v28:FindFirstChild("ToolRequired")) then
+                        local v29, v30, v31 = ipairs(v28:GetDescendants())
+                        while true do
+                            local v32
+                            v31, v32 = v29(v30, v31)
+                            if v31 == nil then
+                                break
+                            end
+                            if v32:IsA("TouchTransmitter") then
+                                v32:Remove()
+                                local v33, v34, v35 = ipairs(v28:GetDescendants())
+                                while true do
+                                    local v36
+                                    v35, v36 = v33(v34, v35)
+                                    if v35 == nil then
+                                        break
+                                    end
+                                    if v36:IsA("Script") then
+                                        v36:Remove()
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                task.wait(0.5)
+            end
+        else
+            _G.Clicker = false
+        end
+    end
+}, "Flag")
+v14:CreateToggle({
+    Name = "God Mode 2 (Disable To Win)",
+    Description = "For Deadly Objects",
+    CurrentValue = false,
+    Callback = function(p37)
+        if p37 then
+            _G.Clicker = true
+            while _G.Clicker == true do
+                local v38 = game.Players.LocalPlayer
+                local v39 = v38.Character or v38.CharacterAdded:Wait()
+                local v40, v41, v42 = ipairs(v39:GetChildren())
+                while true do
+                    local v43
+                    v42, v43 = v40(v41, v42)
+                    if v42 == nil then
+                        break
+                    end
+                    if v43:IsA("BasePart") then
+                        v43.CanTouch = false
+                    end
+                end
+                task.wait(0.5)
+            end
+        else
+            _G.Clicker = false
+            local v44 = game.Players.LocalPlayer
+            local v45 = v44.Character or v44.CharacterAdded:Wait()
+            local v46, v47, v48 = ipairs(v45:GetChildren())
+            while true do
+                local v49
+                v48, v49 = v46(v47, v48)
+                if v48 == nil then
+                    break
+                end
+                if v49:IsA("BasePart") then
+                    v49.CanTouch = true
+                end
+            end
+        end
+    end
+}, "Flag")
+v14:CreateToggle({
+    Name = "Disable The Collision Manager",
+    Description = "Makes You Able To Go Through Vents Without Crouching Again (Works For Piggy Too)",
+    CurrentValue = false,
+    Callback = function(p50)
+        if p50 then
+            _G.Clicker = true
+            while _G.Clicker == true do
+                if Game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("CrouchBlocker") then
+                    Game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("CrouchBlocker"):Remove()
+                end
+                task.wait(3)
+            end
+        else
+            _G.Clicker = false
+        end
+    end
+}, "Flag")
+v14:CreateButton({
+    Name = "Tools Gui [UPDATE]",
+    Description = nil,
+    Callback = function()
+        local v51 = Instance.new("ScreenGui")
+        v51.Name = "PiggyGui"
+        v51.Parent = game.CoreGui
+        local vu52 = Instance.new("Frame", v51)
+        vu52.BackgroundColor3 = Color3.new(0.15, 0.15, 0.15)
+        vu52.Position = UDim2.new(0.21, 10, 0.05, 0)
+        vu52.Size = UDim2.new(0, 500, 0, 310)
+        vu52.Visible = false
+        vu52.Draggable = true
+        vu52.Active = true
+        local v53 = Instance.new("ScrollingFrame", vu52)
+        v53.BackgroundColor3 = Color3.new(0.15, 0.15, 0.15)
+        v53.Position = UDim2.new(0.05, 0, 0.1, 0)
+        v53.Size = UDim2.new(0, 450, 0, 230)
+        v53.CanvasSize = UDim2.new(0, 0, 0, 0)
+        v53.ScrollBarThickness = 8
+        v53.AutomaticCanvasSize = Enum.AutomaticSize.Y
+        local vu54 = Instance.new("TextButton", v51)
+        vu54.Name = "ToggleButton"
+        vu54.Size = UDim2.new(0, 50, 0, 50)
+        vu54.Position = UDim2.new(0.85, 0, 0.133, 0)
+        vu54.Text = "Items"
+        vu54.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+        vu54.TextColor3 = Color3.new(1, 1, 1)
+        vu54.Font = Enum.Font.GothamBold
+        vu54.TextSize = 14
+        vu54.Active = true
+        vu54.BorderSizePixel = 0
+        vu54.BackgroundTransparency = 0.5
+        vu54.ClipsDescendants = true
+        local vu55 = nil
+        local vu56 = nil
+        local vu57 = nil
+        local vu58 = nil
+        local function vu61(p59)
+            local v60 = p59.Position - vu57
+            vu54.Position = UDim2.new(vu58.X.Scale, vu58.X.Offset + v60.X, vu58.Y.Scale, vu58.Y.Offset + v60.Y)
+        end
+        vu54.InputBegan:Connect(function(pu62)
+            if pu62.UserInputType == Enum.UserInputType.MouseButton1 or pu62.UserInputType == Enum.UserInputType.Touch then
+                vu55 = true
+                vu57 = pu62.Position
+                vu58 = vu54.Position
+                pu62.Changed:Connect(function()
+                    if pu62.UserInputState == Enum.UserInputState.End then
+                        vu55 = false
+                    end
+                end)
+            end
+        end)
+        vu54.InputChanged:Connect(function(p63)
+            if p63.UserInputType == Enum.UserInputType.MouseMovement or p63.UserInputType == Enum.UserInputType.Touch then
+                vu56 = p63
+            end
+        end)
+        game:GetService("UserInputService").InputChanged:Connect(function(p64)
+            if p64 == vu56 and vu55 then
+                vu61(p64)
+            end
+        end)
+        vu54.MouseButton1Click:Connect(function()
+            vu52.Visible = not vu52.Visible
+        end)
+        Instance.new("UIGridLayout", v53).CellSize = UDim2.new(0, 90, 0, 75)
+        while not vu52.Visible do
+            task.wait(1)
+        end
+        local v65 = workspace:GetDescendants()
+        local v66 = v53:GetChildren()
+        local v67, v68, v69 = ipairs(v66)
+        local v70 = {}
+        while true do
+            local v71
+            v69, v71 = v67(v68, v69)
+            if v69 == nil then
+                break
+            end
+            if v71.ClassName == "TextButton" then
+                v71:Destroy()
+            end
+        end
+        local v72, v73, v74 = ipairs(v65)
+        while true do
+            local v75
+            v74, v75 = v72(v73, v74)
+            if v74 == nil then
+                break
+            end
+            if v75.Name == "NewItemPickupScript" or v75.Name == "ItemPickupScript" or v75.Name == "Script" and v75.Parent.Parent.Name == "ItemFolder1" and not v75.Parent:FindFirstChildOfClass("Sound") then
+                table.insert(v70, v75.Parent)
+            end
+        end
+        local v76, v77, v78 = ipairs(v70)
+        while true do
+            local vu79
+            v78, vu79 = v76(v77, v78)
+            if v78 == nil then
+                break
+            end
+            local v80 = Instance.new("TextButton", v53)
+            v80.Name = "ItemFrame"
+            v80.BackgroundColor3 = Color3.new(1, 1, 1)
+            v80.BackgroundTransparency = 0.95
+            v80.Size = UDim2.new(0, 100, 0, 100)
+            v80.Text = ""
+            local v81 = Instance.new("ViewportFrame", v80)
+            v81.Name = "View"
+            v81.Size = UDim2.new(1, 0, 1, 0)
+            v81.BackgroundTransparency = 1
+            v81.BorderSizePixel = 0
+            vu79:Clone().Parent = v81
+            local v82 = Instance.new("Camera", v81)
+            v82.CameraType = Enum.CameraType.Fixed
+            local v83 = vu79.Position
+            local v84 = v83 + Vector3.new(0, 3, 1)
+            v82.CFrame = CFrame.new(v84, v83)
+            v81.CurrentCamera = v82
+            v80.MouseButton1Down:Connect(function()
+                if vu79:FindFirstChild("ClickDetector") or vu79:FindFirstChild("ProximityPrompt") then
+                    local v85 = game.Players.LocalPlayer.Character
+                    if v85 and v85:FindFirstChild("HumanoidRootPart") then
+                        local v86 = v85.HumanoidRootPart.CFrame
+                        wait(0.01)
+                        v85.HumanoidRootPart.CFrame = vu79.CFrame
+                        wait(0.15)
+                        if vu79:FindFirstChild("ClickDetector") then
+                            fireclickdetector(vu79.ClickDetector)
+                        elseif vu79:FindFirstChild("ProximityPrompt") then
+                            fireproximityprompt(vu79.ProximityPrompt)
+                        end
+                        wait(0.01)
+                        v85.HumanoidRootPart.CFrame = v86
+                    end
+                end
+            end)
+        end
+    end
+})
+v14:CreateToggle({
+    Name = "Disable Traps",
+    Description = "Disables Mostly All Of The Traps",
+    CurrentValue = false,
+    Callback = function(p87)
+        if p87 then
+            _G.Clicker = true
+            while _G.Clicker == true do
+                local v88 = workspace:GetDescendants()
+                local v89, v90, v91 = pairs(v88)
+                while true do
+                    local v92
+                    v91, v92 = v89(v90, v91)
+                    if v91 == nil then
+                        break
+                    end
+                    if v92:IsA("Script") and (v92.Name == "BlackHoleScript" or (v92.Name == "PumpScript" or v92.Name == "ConcoctionScript")) then
+                        local v93 = v92.Parent
+                        local v94 = v93.Parent
+                        if string.find(v93.Name, "Trap") or string.find(v94.Name, "Trap") then
+                            v92.Disabled = true
+                            local v95, v96, v97 = pairs(v93:GetDescendants())
+                            while true do
+                                local v98
+                                v97, v98 = v95(v96, v97)
+                                if v97 == nil then
+                                    break
+                                end
+                                if v98:IsA("TouchTransmitter") then
+                                    v98:Remove()
+                                end
+                            end
+                            local v99, v100, v101 = pairs(v94:GetDescendants())
+                            while true do
+                                local v102
+                                v101, v102 = v99(v100, v101)
+                                if v101 == nil then
+                                    break
+                                end
+                                if v102:IsA("TouchTransmitter") then
+                                    v102:Remove()
+                                end
+                            end
+                        end
+                        if v92.Name == "CrawlTrap" and v92:FindFirstChild("HumanoidRootPart") then
+                            v92:FindFirstChild("Humanoid").Health = - 9
+                        end
+                    end
+                end
+                wait(0.5)
+            end
+        else
+            _G.Clicker = false
+        end
+    end
+}, "Flag")
+v15:CreateSection("Troll People")
+v15:CreateButton({
+    Name = "Kill Piggy Bot (FE)",
+    Description = "Kills The Main Bot Of The Map (Doesnt Work On Tio Or Mr P Or Duocara)",
+    Callback = function()
+        local _ = game.Players.LocalPlayer
+        local v103 = workspace.PiggyNPC:FindFirstChildOfClass("Model"):FindFirstChild("Humanoid")
+        local v104 = workspace.PiggyNPC:FindFirstChildOfClass("Model"):FindFirstChild("HumanoidRootPart")
+        local v105, v106, v107 = ipairs(v104:GetChildren())
+        while true do
+            local v108
+            v107, v108 = v105(v106, v107)
+            if v107 == nil then
+                break
+            end
+            if v108:IsA("BodyVelocity") then
+                v108:Remove()
+            end
+        end
+        v104.Anchored = false
+        v103.PlatformStand = true
+        local v109 = Instance.new("BodyVelocity")
+        v109.Velocity = Vector3.new(0, - 9999, 0)
+        v109.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+        v109.P = math.huge
+        v109.Parent = v104
+    end
+})
+v15:CreateButton({
+    Name = "Control Friendly/UnFriendly Piggy Bots",
+    Description = "Doesnt Work On Tio Or Mr P Or Duocara",
+    Callback = function()
+        local vu110 = math.huge
+        local _ = math.pi
+        game.Players.LocalPlayer.PlayerGui:FindFirstChild("GameGUI").ResetOnSpawn = false
+        game:GetService("StarterGui")
+        local v111 = game:GetService("CoreGui"):WaitForChild("RobloxGui")
+        local vu112 = game:GetService("Players").LocalPlayer
+        local vu113 = vu112.Character or vu112.CharacterAdded:Wait()
+        vu112:WaitForChild("Backpack")
+        local v114 = vu113
+        local vu115 = vu113.WaitForChild(v114, "Humanoid")
+        local v116 = vu113
+        local vu117 = vu113.WaitForChild(v116, "HumanoidRootPart")
+        local vu118 = vu112:GetMouse()
+        local vu119 = false
+        local vu120 = nil
+        local vu121 = {}
+        local vu122 = {}
+        local vu123 = nil
+        function CreateDisposableInstance(p124, p125)
+            local v126 = Instance.new(p124)
+            table.insert(vu122, v126)
+            local v127, v128, v129 = pairs(p125 or {})
+            while true do
+                local v130
+                v129, v130 = v127(v128, v129)
+                if v129 == nil then
+                    break
+                end
+                v126[v129] = v130
+            end
+            return v126
+        end
+        local vu131 = CreateDisposableInstance("Highlight", {
+            FillTransparency = 1,
+            OutlineColor = Color3.fromRGB(75, 150, 255),
+            Enabled = false,
+            Parent = vu113
+        })
+        local v132 = {
+            Parent = vu117
+        }
+        local v133 = CreateDisposableInstance("Attachment", v132)
+        local vu134 = CreateDisposableInstance("Attachment")
+        local vu135 = CreateDisposableInstance("Attachment")
+        local vu136 = CreateDisposableInstance("LinearVelocity", {
+            Attachment0 = v133,
+            MaxForce = vu110,
+            Enabled = false,
+            Parent = workspace
+        })
+        local vu137 = CreateDisposableInstance("AlignOrientation", {
+            MaxTorque = vu110,
+            Responsiveness = vu110,
+            Attachment0 = v133,
+            Attachment1 = vu135,
+            Enabled = false,
+            Parent = workspace
+        })
+        local vu138 = CreateDisposableInstance("AlignPosition", {
+            ApplyAtCenterOfMass = false,
+            Attachment0 = vu135,
+            Attachment1 = vu134,
+            MaxForce = vu110,
+            Responsiveness = vu110,
+            Enabled = false,
+            Parent = workspace
+        })
+        local vu139 = CreateDisposableInstance("AlignOrientation", {
+            MaxTorque = vu110,
+            Responsiveness = vu110,
+            Attachment0 = vu135,
+            Attachment1 = vu134,
+            Enabled = false,
+            Parent = workspace
+        })
+        local vu140 = nil
+        local vu141 = nil
+        local vu142 = nil
+        local vu143 = nil
+        local vu144 = nil
+        local vu145 = nil
+        local vu146 = nil
+        function SetOriginalProperty(p147, p148, p149)
+            local v150 = vu121[p147] or {}
+            v150[p148] = p149
+            vu121[p147] = v150
+        end
+        function SetCameraSubject(p151)
+            while task.wait() do
+                local v152 = workspace.CurrentCamera
+                if v152 then
+                    v152.CameraSubject = p151
+                    return
+                end
+            end
+        end
+        local vu153 = nil
+        local vu154 = nil
+        function StopControlling(p155)
+            vu119 = false
+            vu120 = nil
+            if vu154 then
+                vu154:Disconnect()
+                vu154 = nil
+            end
+            if vu153 then
+                vu153:Disconnect()
+                vu153 = nil
+            end
+            SetCameraSubject(vu115)
+            vu112.Character = vu113
+            vu134.Parent = nil
+            vu135.Parent = nil
+            if vu140 then
+                vu140:Destroy()
+                vu140 = nil
+            end
+            vu141 = nil
+            if vu145 then
+                vu145:Destroy()
+                vu145 = nil
+            end
+            vu142 = nil
+            vu143 = nil
+            vu144 = nil
+            if p155 and vu123 then
+                vu117.CFrame = vu123
+                vu123 = nil
+            end
+            local v156, v157, v158 = pairs(vu121)
+            while true do
+                local v159, v160 = v156(v157, v158)
+                if v159 == nil then
+                    break
+                end
+                local v161, v162, v163 = pairs(v160)
+                v158 = v159
+                while true do
+                    local v164
+                    v163, v164 = v161(v162, v163)
+                    if v163 == nil then
+                        break
+                    end
+                    v159[v163] = v164
+                end
+                vu121[v159] = nil
+            end
+            if game.Players.LocalPlayer.Character:FindFirstChild("Energy") and game.Players.LocalPlayer.Character:FindFirstChild("Energy").Value == 100 then
+                game.Players.LocalPlayer.Character:FindFirstChild("Energy").Value = 99
+                game.Players.LocalPlayer.Character:FindFirstChild("Energy").Value = 100
+            end
+            local v165 = game.Players.LocalPlayer
+            local v166 = v165.Character or v165.CharacterAdded:Wait()
+            local v167, v168, v169 = ipairs(v166:GetChildren())
+            while true do
+                local v170
+                v169, v170 = v167(v168, v169)
+                if v169 == nil then
+                    break
+                end
+                if v170:IsA("BasePart") then
+                    v170.CanTouch = true
+                end
+            end
+            vu131.Enabled = false
+            vu136.Enabled = false
+            vu137.Enabled = false
+            vu138.Enabled = false
+            vu139.Enabled = false
+            vu115.PlatformStand = false
+        end
+        function Control(p171)
+            if vu119 then
+                return
+            elseif vu120 ~= p171 then
+                local v172 = p171:FindFirstChild("Humanoid")
+                local vu173 = p171:FindFirstChild("HumanoidRootPart")
+                if vu173 and v172 then
+                    if game.Players:GetPlayerFromCharacter(p171) then
+                        return
+                    end
+                    if p171 == vu113 then
+                        return
+                    end
+                    vu120 = p171
+                    vu123 = vu117.CFrame
+                    vu131.Enabled = true
+                    SetOriginalProperty(vu117, "CFrame", vu117.CFrame)
+                    vu115.PlatformStand = true
+                    local v174 = game.Players.LocalPlayer
+                    local v175 = v174.Character or v174.CharacterAdded:Wait()
+                    local v176, v177, v178 = ipairs(v175:GetChildren())
+                    while true do
+                        local v179
+                        v178, v179 = v176(v177, v178)
+                        if v178 == nil then
+                            break
+                        end
+                        if v179:IsA("BasePart") then
+                            v179.CanTouch = false
+                        end
+                    end
+                    task.wait(0.5)
+                end
+                pcall(function()
+                    vu173.BodyPosition:Destroy()
+                end)
+                pcall(function()
+                    vu173.BodyGyro:Destroy()
+                end)
+                local v180 = p171:Clone()
+                local v181 = v180.HumanoidRootPart
+                local vu182 = v180:FindFirstChildOfClass("Humanoid")
+                vu153 = vu182.Died:Once(function()
+                    if vu119 then
+                        vu115.Health = 0
+                    end
+                end)
+                local function v183()
+                    if vu119 then
+                        vu182.MaxHealth = vu110
+                        vu182.Health = vu110
+                        vu115.Health = vu110
+                    end
+                end
+                vu154 = vu115.Changed:Connect(v183)
+                v183()
+                local v184, v185, v186 = pairs(v180:GetDescendants())
+                local v187 = vu182
+                while true do
+                    local vu188
+                    v186, vu188 = v184(v185, v186)
+                    if v186 == nil then
+                        break
+                    end
+                    if vu188:IsA("Light") or vu188:IsA("Sound") then
+                        vu188:Remove()
+                    else
+                        pcall(function()
+                            vu188.Transparency = 0.95
+                        end)
+                    end
+                end
+                vu140 = v180
+                vu141 = v181
+                v180.Parent = workspace
+                vu134.Parent = v181
+                vu135.Parent = vu173
+                vu142 = p171
+                vu143 = vu173
+                vu144 = p171.Name
+                vu145 = Instance.new("Highlight")
+                vu145.FillTransparency = 1
+                vu145.OutlineColor = Color3.fromRGB(255, 0, 0)
+                vu145.Parent = p171
+                DummyHighlighter = Instance.new("Highlight")
+                DummyHighlighter.FillTransparency = 1
+                DummyHighlighter.OutlineColor = Color3.fromRGB(128, 0, 128)
+                DummyHighlighter.Parent = v180
+                SetCameraSubject(v187)
+                vu112.Character = v180
+                vu138.Enabled = true
+                vu139.Enabled = true
+                vu137.Enabled = false
+                vu136.Enabled = true
+                vu119 = true
+            end
+        end
+        function Cleanup()
+            StopControlling(true)
+            local v189, v190, v191 = pairs(vu146)
+            while true do
+                local v192
+                v191, v192 = v189(v190, v191)
+                if v191 == nil then
+                    break
+                end
+                v192:Disconnect()
+            end
+            local v193, v194, v195 = pairs(vu122)
+            while true do
+                local v196
+                v195, v196 = v193(v194, v195)
+                if v195 == nil then
+                    break
+                end
+                v196:Destroy()
+            end
+        end
+        local vu197 = CreateDisposableInstance("TextButton", {
+            Name = "Toggle",
+            AnchorPoint = Vector2.new(0.5, 1),
+            Size = UDim2.new(0, 180, 0, 25),
+            BorderColor3 = Color3.fromRGB(0, 0, 0),
+            Position = UDim2.new(0, 90, 0, 100),
+            BorderSizePixel = 0,
+            BackgroundColor3 = Color3.fromRGB(45, 45, 45),
+            BackgroundTransparency = 0.5,
+            TextSize = 14,
+            TextColor3 = Color3.new(0, 255, 0),
+            Text = "Toggle: ON",
+            FontFace = Font.new("rbxasset://fonts/families/Ubuntu.json", Enum.FontWeight.Bold),
+            ZIndex = - 2147483648,
+            Parent = v111
+        })
+        local v198 = Instance.new("UICorner")
+        v198.CornerRadius = UDim.new(1, 0)
+        v198.Parent = vu197
+        local vu199 = Instance.new("UIStroke")
+        vu199.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+        vu199.Color = vu197.TextColor3
+        vu199.Transparency = 0.5
+        vu199.Parent = vu197
+        Instance.new("UIScale").Parent = vu197
+        local vu200 = true
+        function UpdateToggleButton()
+            local v201 = Color3.new(1, 0, 0)
+            local v202
+            if vu200 then
+                v201 = Color3.new(0, 1, 0)
+                v202 = "Toggle: ON"
+            else
+                v202 = "Toggle: OFF"
+            end
+            vu197.Text = v202
+            vu197.TextColor3 = v201
+            vu199.Color = v201
+        end
+        function ToggleToggleButton()
+            if vu200 and vu119 then
+                StopControlling(true)
+            end
+            vu200 = not vu200
+            UpdateToggleButton()
+        end
+        function OnMouseClick()
+            if not vu200 then
+                return
+            end
+            local v203 = vu118.Target
+            if not v203 then
+                return
+            end
+            while v203 and v203 ~= workspace do
+                if v203:FindFirstChild("Humanoid") and v203:FindFirstChild("HumanoidRootPart") then
+                    wait(0)
+                    Control(v203)
+                    break
+                end
+                v203 = v203.Parent
+            end
+        end
+        vu146 = {
+            game:GetService("UserInputService").InputBegan:Connect(function(p204, p205)
+                if not p205 and (p204.KeyCode == Enum.KeyCode.H and p204.UserInputState == Enum.UserInputState.Begin) then
+                    ToggleToggleButton()
+                end
+            end),
+            vu118.Button1Down:Connect(OnMouseClick),
+            vu197.Activated:Connect(ToggleToggleButton),
+            game:GetService("RunService").Heartbeat:Connect(function()
+                if vu119 and vu200 then
+                    if type(sethiddenproperty) ~= "function" then
+                        if type(setsimulationradius) == "function" then
+                            pcall(function()
+                                setsimulationradius(vu110)
+                            end)
+                        end
+                    else
+                        pcall(function()
+                            sethiddenproperty(vu112, "SimulationRadius", vu110)
+                        end)
+                    end
+                    if vu143 then
+                        local v206 = vu143.Position
+                        local v207 = Vector3.new(v206.X, v206.Y - 8.4, v206.Z)
+                        vu117.CFrame = CFrame.new(v207) * vu143.CFrame.Rotation
+                    end
+                    task.spawn(function()
+                        local v208 = vu113
+                        local v209, v210, v211 = pairs(v208:GetChildren())
+                        while true do
+                            local v212
+                            v211, v212 = v209(v210, v211)
+                            if v211 == nil then
+                                break
+                            end
+                            if v212:IsA("BasePart") and v212.CanCollide then
+                                SetOriginalProperty(v212, "CanCollide", true)
+                                v212.CanCollide = false
+                            end
+                        end
+                    end)
+                    if vu140 then
+                        task.spawn(function()
+                            local v213 = vu140
+                            local v214, v215, v216 = pairs(v213:GetChildren())
+                            while true do
+                                local v217
+                                v216, v217 = v214(v215, v216)
+                                if v216 == nil then
+                                    break
+                                end
+                                if v217:IsA("BasePart") and v217.CanCollide then
+                                    v217.CanCollide = false
+                                    v217.CanTouch = false
+                                end
+                            end
+                        end)
+                    end
+                    if vu142 then
+                        local v218 = vu142
+                        local v219, v220, v221 = pairs(v218:GetChildren())
+                        while true do
+                            local v222
+                            v221, v222 = v219(v220, v221)
+                            if v221 == nil then
+                                break
+                            end
+                            if v222:IsA("BasePart") and v222.CanCollide then
+                                SetOriginalProperty(v222, "CanCollide", true)
+                                v222.CanCollide = false
+                            end
+                        end
+                    end
+                end
+            end),
+            vu115.Died:Once(Cleanup),
+            vu113.Destroying:Once(Cleanup)
+        }
+        UpdateToggleButton()
+    end
+})
+v15:CreateButton({
+    Name = "Control Piggy Bots (Kill Players Version)",
+    Description = "This Is The Deadly Version",
+    Callback = function()
+        local vu223 = math.huge
+        local _ = math.pi
+        game.Players.LocalPlayer.PlayerGui:FindFirstChild("GameGUI").ResetOnSpawn = false
+        game:GetService("StarterGui")
+        local v224 = game:GetService("CoreGui"):WaitForChild("RobloxGui")
+        local vu225 = game:GetService("Players").LocalPlayer
+        local vu226 = vu225.Character or vu225.CharacterAdded:Wait()
+        vu225:WaitForChild("Backpack")
+        local v227 = vu226
+        local vu228 = vu226.WaitForChild(v227, "Humanoid")
+        local v229 = vu226
+        local vu230 = vu226.WaitForChild(v229, "HumanoidRootPart")
+        local vu231 = vu225:GetMouse()
+        local vu232 = false
+        local vu233 = nil
+        local vu234 = {}
+        local vu235 = {}
+        local vu236 = nil
+        function CreateDisposableInstance(p237, p238)
+            local v239 = Instance.new(p237)
+            table.insert(vu235, v239)
+            local v240, v241, v242 = pairs(p238 or {})
+            while true do
+                local v243
+                v242, v243 = v240(v241, v242)
+                if v242 == nil then
+                    break
+                end
+                v239[v242] = v243
+            end
+            return v239
+        end
+        local vu244 = CreateDisposableInstance("Highlight", {
+            FillTransparency = 1,
+            OutlineColor = Color3.fromRGB(75, 150, 255),
+            Enabled = false,
+            Parent = vu226
+        })
+        local v245 = {
+            Parent = vu230
+        }
+        local v246 = CreateDisposableInstance("Attachment", v245)
+        local vu247 = CreateDisposableInstance("Attachment")
+        local vu248 = CreateDisposableInstance("Attachment")
+        local vu249 = CreateDisposableInstance("LinearVelocity", {
+            Attachment0 = v246,
+            MaxForce = vu223,
+            Enabled = false,
+            Parent = workspace
+        })
+        local vu250 = CreateDisposableInstance("AlignOrientation", {
+            MaxTorque = vu223,
+            Responsiveness = vu223,
+            Attachment0 = v246,
+            Attachment1 = vu248,
+            Enabled = false,
+            Parent = workspace
+        })
+        local vu251 = CreateDisposableInstance("AlignPosition", {
+            ApplyAtCenterOfMass = false,
+            Attachment0 = vu248,
+            Attachment1 = vu247,
+            MaxForce = vu223,
+            Responsiveness = vu223,
+            Enabled = false,
+            Parent = workspace
+        })
+        local vu252 = CreateDisposableInstance("AlignOrientation", {
+            MaxTorque = vu223,
+            Responsiveness = vu223,
+            Attachment0 = vu248,
+            Attachment1 = vu247,
+            Enabled = false,
+            Parent = workspace
+        })
+        local vu253 = nil
+        local vu254 = nil
+        local vu255 = nil
+        local vu256 = nil
+        local vu257 = nil
+        local vu258 = nil
+        local vu259 = nil
+        function SetOriginalProperty(p260, p261, p262)
+            local v263 = vu234[p260] or {}
+            v263[p261] = p262
+            vu234[p260] = v263
+        end
+        function SetCameraSubject(p264)
+            while task.wait() do
+                local v265 = workspace.CurrentCamera
+                if v265 then
+                    v265.CameraSubject = p264
+                    return
+                end
+            end
+        end
+        local vu266 = nil
+        local vu267 = nil
+        function StopControlling(p268)
+            vu232 = false
+            vu233 = nil
+            if vu267 then
+                vu267:Disconnect()
+                vu267 = nil
+            end
+            if vu266 then
+                vu266:Disconnect()
+                vu266 = nil
+            end
+            SetCameraSubject(vu228)
+            vu225.Character = vu226
+            vu247.Parent = nil
+            vu248.Parent = nil
+            if vu253 then
+                vu253:Destroy()
+                vu253 = nil
+            end
+            vu254 = nil
+            if vu258 then
+                vu258:Destroy()
+                vu258 = nil
+            end
+            vu255 = nil
+            vu256 = nil
+            vu257 = nil
+            if p268 and vu236 then
+                vu230.CFrame = vu236
+                vu236 = nil
+            end
+            local v269, v270, v271 = pairs(vu234)
+            while true do
+                local v272, v273 = v269(v270, v271)
+                if v272 == nil then
+                    break
+                end
+                local v274, v275, v276 = pairs(v273)
+                v271 = v272
+                while true do
+                    local v277
+                    v276, v277 = v274(v275, v276)
+                    if v276 == nil then
+                        break
+                    end
+                    v272[v276] = v277
+                end
+                vu234[v272] = nil
+            end
+            if game.Players.LocalPlayer.Character:FindFirstChild("Energy") and game.Players.LocalPlayer.Character:FindFirstChild("Energy").Value == 100 then
+                game.Players.LocalPlayer.Character:FindFirstChild("Energy").Value = 99
+                game.Players.LocalPlayer.Character:FindFirstChild("Energy").Value = 100
+            end
+            local v278 = game.Players.LocalPlayer
+            local v279 = v278.Character or v278.CharacterAdded:Wait()
+            local v280, v281, v282 = ipairs(v279:GetChildren())
+            while true do
+                local v283
+                v282, v283 = v280(v281, v282)
+                if v282 == nil then
+                    break
+                end
+                if v283:IsA("BasePart") then
+                    v283.CanTouch = true
+                end
+            end
+            vu244.Enabled = false
+            vu249.Enabled = false
+            vu250.Enabled = false
+            vu251.Enabled = false
+            vu252.Enabled = false
+            vu228.PlatformStand = false
+        end
+        function Control(p284)
+            if vu232 then
+                return
+            elseif vu233 ~= p284 then
+                local v285 = p284:FindFirstChild("Humanoid")
+                local vu286 = p284:FindFirstChild("HumanoidRootPart")
+                if vu286 and v285 then
+                    if game.Players:GetPlayerFromCharacter(p284) then
+                        return
+                    end
+                    if p284 == vu226 then
+                        return
+                    end
+                    vu233 = p284
+                    vu236 = vu230.CFrame
+                    vu244.Enabled = true
+                    SetOriginalProperty(vu230, "CFrame", vu230.CFrame)
+                    vu228.PlatformStand = true
+                    local v287 = game.Players.LocalPlayer
+                    local v288 = v287.Character or v287.CharacterAdded:Wait()
+                    local v289, v290, v291 = ipairs(v288:GetChildren())
+                    while true do
+                        local v292, v293 = v289(v290, v291)
+                        if v292 == nil then
+                            break
+                        end
+                        v291 = v292
+                        if v293:IsA("BasePart") then
+                            v293.CanTouch = false
+                        end
+                    end
+                    task.wait(0.5)
+                    pcall(function()
+                        vu286.BodyPosition:Destroy()
+                    end)
+                    pcall(function()
+                        vu286.BodyGyro:Destroy()
+                    end)
+                    local v294 = p284:Clone()
+                    local v295 = v294.HumanoidRootPart
+                    local vu296 = v294:FindFirstChildOfClass("Humanoid")
+                    vu266 = vu296.Died:Once(function()
+                        if vu232 then
+                            vu228.Health = 0
+                        end
+                    end)
+                    local function v297()
+                        if vu232 then
+                            vu296.MaxHealth = vu223
+                            vu296.Health = vu223
+                            vu228.Health = vu223
+                        end
+                    end
+                    vu267 = vu228.Changed:Connect(v297)
+                    v297()
+                    local v298, v299, v300 = pairs(v294:GetDescendants())
+                    local v301 = vu296
+                    while true do
+                        local vu302
+                        v300, vu302 = v298(v299, v300)
+                        if v300 == nil then
+                            break
+                        end
+                        if vu302:IsA("Light") or vu302:IsA("Sound") then
+                            vu302:Remove()
+                        else
+                            pcall(function()
+                                vu302.Transparency = 0.95
+                            end)
+                        end
+                    end
+                    vu253 = v294
+                    vu254 = v295
+                    v294.Parent = workspace
+                    vu247.Parent = v295
+                    vu248.Parent = vu286
+                    vu255 = p284
+                    vu256 = vu286
+                    vu257 = p284.Name
+                    vu258 = Instance.new("Highlight")
+                    vu258.FillTransparency = 1
+                    vu258.OutlineColor = Color3.fromRGB(255, 0, 0)
+                    vu258.Parent = p284
+                    local v303 = Instance.new("Highlight")
+                    v303.FillTransparency = 1
+                    v303.OutlineColor = Color3.fromRGB(128, 0, 128)
+                    v303.Parent = v294
+                    SetCameraSubject(v301)
+                    vu225.Character = v294
+                    vu251.Enabled = true
+                    vu252.Enabled = true
+                    vu250.Enabled = false
+                    vu249.Enabled = true
+                    vu232 = true
+                    while vu232 == true and task.wait(0.5) do
+                        local v304, v305, v306 = ipairs(p284:GetDescendants())
+                        while true do
+                            local v307, v308 = v304(v305, v306)
+                            if v307 == nil then
+                                break
+                            end
+                            v306 = v307
+                            if v308:IsA("TouchTransmitter") then
+                                v308:Remove()
+                                local v309, v310, v311 = ipairs(p284:GetDescendants())
+                                while true do
+                                    local v312
+                                    v311, v312 = v309(v310, v311)
+                                    if v311 == nil then
+                                        break
+                                    end
+                                    if v312:IsA("Script") then
+                                        v312:Remove()
+                                    end
+                                end
+                            end
+                        end
+                        local v313, v314, v315 = ipairs(game.Players:GetPlayers())
+                        while true do
+                            local v316, v317 = v313(v314, v315)
+                            if v316 == nil then
+                                break
+                            end
+                            v315 = v316
+                            if v317 ~= game.Players.LocalPlayer and v317.Character and not (v317.Character:FindFirstChild("Enemy") or v317.Character:FindFirstChild("Traitor")) then
+                                local v318 = v317.Character
+                                v318:FindFirstChild("Humanoid")
+                                local v319 = v318:FindFirstChild("HumanoidRootPart")
+                                if (v319.Position - workspace.GameFolder.MainSpawn.Position).Magnitude >= 20 and v319 then
+                                    v295.CFrame = v319.CFrame * CFrame.new(0, 2, - 9)
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        function Cleanup()
+            StopControlling(true)
+            if vu259 then
+                local v320, v321, v322 = pairs(vu259)
+                while true do
+                    local v323
+                    v322, v323 = v320(v321, v322)
+                    if v322 == nil then
+                        break
+                    end
+                    v323:Disconnect()
+                end
+            end
+            local v324, v325, v326 = pairs(vu235)
+            while true do
+                local v327
+                v326, v327 = v324(v325, v326)
+                if v326 == nil then
+                    break
+                end
+                v327:Destroy()
+            end
+        end
+        local vu328 = CreateDisposableInstance("TextButton", {
+            Name = "Toggle",
+            AnchorPoint = Vector2.new(0.5, 1),
+            Size = UDim2.new(0, 180, 0, 25),
+            BorderColor3 = Color3.fromRGB(0, 0, 0),
+            Position = UDim2.new(0, 90, 0, 100),
+            BorderSizePixel = 0,
+            BackgroundColor3 = Color3.fromRGB(45, 45, 45),
+            BackgroundTransparency = 0.5,
+            TextSize = 14,
+            TextColor3 = Color3.new(0, 255, 0),
+            Text = "Toggle: ON",
+            FontFace = Font.new("rbxasset://fonts/families/Ubuntu.json", Enum.FontWeight.Bold),
+            ZIndex = - 2147483648,
+            Parent = v224
+        })
+        local v329 = Instance.new("UICorner")
+        v329.CornerRadius = UDim.new(1, 0)
+        v329.Parent = vu328
+        local vu330 = Instance.new("UIStroke")
+        vu330.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+        vu330.Color = vu328.TextColor3
+        vu330.Transparency = 0.5
+        vu330.Parent = vu328
+        Instance.new("UIScale").Parent = vu328
+        local vu331 = true
+        function UpdateToggleButton()
+            local v332 = Color3.new(1, 0, 0)
+            local v333
+            if vu331 then
+                v332 = Color3.new(0, 1, 0)
+                v333 = "Toggle: ON"
+            else
+                v333 = "Toggle: OFF"
+            end
+            vu328.Text = v333
+            vu328.TextColor3 = v332
+            vu330.Color = v332
+        end
+        function ToggleToggleButton()
+            if vu331 and vu232 then
+                StopControlling(true)
+            end
+            vu331 = not vu331
+            UpdateToggleButton()
+        end
+        function OnMouseClick()
+            if not vu331 then
+                return
+            end
+            local v334 = vu231.Target
+            if not v334 then
+                return
+            end
+            while v334 and v334 ~= workspace do
+                if v334:FindFirstChild("Humanoid") and (v334:FindFirstChild("HumanoidRootPart") and not v334:FindFirstChild("ToolRequired")) then
+                    wait(0)
+                    Control(v334)
+                    break
+                end
+                v334 = v334.Parent
+            end
+        end
+        vu259 = {
+            game:GetService("UserInputService").InputBegan:Connect(function(p335, p336)
+                if not p336 and (p335.KeyCode == Enum.KeyCode.H and p335.UserInputState == Enum.UserInputState.Begin) then
+                    ToggleToggleButton()
+                end
+            end),
+            vu231.Button1Down:Connect(OnMouseClick),
+            vu328.Activated:Connect(ToggleToggleButton),
+            game:GetService("RunService").Heartbeat:Connect(function()
+                if vu232 and vu331 then
+                    if type(sethiddenproperty) ~= "function" then
+                        if type(setsimulationradius) == "function" then
+                            pcall(function()
+                                setsimulationradius(vu223)
+                            end)
+                        end
+                    else
+                        pcall(function()
+                            sethiddenproperty(vu225, "SimulationRadius", vu223)
+                        end)
+                    end
+                    if vu256 then
+                        local v337 = vu256.Position
+                        local v338 = Vector3.new(v337.X, v337.Y - 8.4, v337.Z)
+                        vu230.CFrame = CFrame.new(v338) * vu256.CFrame.Rotation
+                    end
+                    task.spawn(function()
+                        local v339 = vu226
+                        local v340, v341, v342 = pairs(v339:GetChildren())
+                        while true do
+                            local v343
+                            v342, v343 = v340(v341, v342)
+                            if v342 == nil then
+                                break
+                            end
+                            if v343:IsA("BasePart") and v343.CanCollide then
+                                SetOriginalProperty(v343, "CanCollide", true)
+                                v343.CanCollide = false
+                            end
+                        end
+                    end)
+                    if vu253 then
+                        task.spawn(function()
+                            local v344 = vu253
+                            local v345, v346, v347 = pairs(v344:GetChildren())
+                            while true do
+                                local v348
+                                v347, v348 = v345(v346, v347)
+                                if v347 == nil then
+                                    break
+                                end
+                                if v348:IsA("BasePart") and v348.CanCollide then
+                                    v348.CanCollide = false
+                                    v348.CanTouch = false
+                                end
+                            end
+                        end)
+                    end
+                    if vu255 then
+                        local v349 = vu255
+                        local v350, v351, v352 = pairs(v349:GetChildren())
+                        while true do
+                            local v353
+                            v352, v353 = v350(v351, v352)
+                            if v352 == nil then
+                                break
+                            end
+                            if v353:IsA("BasePart") and v353.CanCollide then
+                                SetOriginalProperty(v353, "CanCollide", true)
+                                v353.CanCollide = false
+                            end
+                        end
+                    end
+                end
+            end),
+            vu228.Died:Once(Cleanup),
+            vu226.Destroying:Once(Cleanup)
+        }
+        UpdateToggleButton()
+    end
+})
+v15:CreateToggle({
+    Name = "Freeze Piggy Bot",
+    Description = "piggy might get up if u get too far from piggy",
+    CurrentValue = false,
+    Callback = function(p354)
+        if p354 then
+            if not workspace.PiggyNPC:FindFirstChildOfClass("Model") then
+                return
+            end
+            workspace.PiggyNPC:FindFirstChildOfClass("Model"):FindFirstChild("Humanoid").PlatformStand = true
+        else
+            workspace.PiggyNPC:FindFirstChildOfClass("Model"):FindFirstChild("Humanoid").PlatformStand = false
+        end
+    end
+}, "Flag")
+v15:CreateButton({
+    Name = "Fling Bots Tool",
+    Description = "Flings Any Piggy Bot To Their Death Friendly Or UnFriendly With The Tool",
+    Callback = function()
+        local v355 = game:GetService("Players").LocalPlayer
+        local vu356 = v355:GetMouse()
+        local v357 = Instance.new("Tool")
+        v357.Name = "Fling Bots"
+        v357.RequiresHandle = false
+        v357.Parent = v355.Backpack
+        v357.ToolTip = "Click to send Bots STRAIGHT TO GOD!"
+        v357.CanBeDropped = false
+        v357.Activated:Connect(function()
+            local v358 = vu356.Target
+            if v358 then
+                local v359 = v358:FindFirstAncestorWhichIsA("Model")
+                if v359 then
+                    local v360 = v359:FindFirstChildOfClass("humanoid")
+                    local v361 = v359:FindFirstChild("HumanoidRootPart")
+                    local v362, v363, v364 = ipairs(v361:GetChildren())
+                    while true do
+                        local v365
+                        v364, v365 = v362(v363, v364)
+                        if v364 == nil then
+                            break
+                        end
+                        if v365:IsA("BodyVelocity") then
+                            v365:Remove()
+                        end
+                    end
+                    v361.Anchored = false
+                    v360.PlatformStand = true
+                    local v366 = Instance.new("BodyVelocity")
+                    v366.Velocity = Vector3.new(0, - 9999, 0)
+                    v366.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+                    v366.P = math.huge
+                    v366.Parent = v361
+                end
+            else
+                return
+            end
+        end)
+    end
+})
+v15:CreateToggle({
+    Name = "Spam Open/Close Doors",
+    Description = "Spam Open/Close All Doors For Trolling",
+    CurrentValue = false,
+    Callback = function(p367)
+        if p367 then
+            _G.Clicker = true
+            while _G.Clicker == true do
+                local vu368 = "rbxassetid://320946744";
+                (function()
+                    local v369 = game:GetService("Workspace")
+                    local v370, v371, v372 = ipairs(v369:GetDescendants())
+                    local v373 = false
+                    while true do
+                        local v374
+                        v372, v374 = v370(v371, v372)
+                        if v372 == nil then
+                            break
+                        end
+                        if v374:IsA("Sound") and v374.SoundId == vu368 then
+                            local v375 = v374.Parent:FindFirstChildOfClass("ClickDetector")
+                            if v375 then
+                                fireclickdetector(v375)
+                                v373 = true
+                            end
+                        end
+                    end
+                    if not v373 then
+                        local v376, v377, v378 = ipairs(v369:GetDescendants())
+                        while true do
+                            local v379
+                            v378, v379 = v376(v377, v378)
+                            if v378 == nil then
+                                break
+                            end
+                            if v379:IsA("RemoteEvent") then
+                                local v380 = v379.Parent
+                                local v381 = v380:FindFirstChildOfClass("ClickDetector")
+                                if v381 and v380:FindFirstChildOfClass("WeldConstraint") then
+                                    fireclickdetector(v381)
+                                end
+                            end
+                        end
+                    end
+                end)()
+                wait(0.5)
+            end
+        else
+            _G.Clicker = false
+        end
+    end
+}, "Flag")
+v16:CreateToggle({
+    Name = "Piggy Esp",
+    Description = "Esp For Piggys And Bots",
+    CurrentValue = false,
+    Callback = function(p382)
+        if p382 then
+            _G.Clicker = true
+            while _G.Clicker do
+                local v383, v384, v385 = ipairs(workspace:GetDescendants())
+                while true do
+                    local v386
+                    v385, v386 = v383(v384, v385)
+                    if v385 == nil then
+                        break
+                    end
+                    if v386:FindFirstChild("Enemy") and (not v386:FindFirstChild("CHICKEN2") and (not v386:FindFirstChild("ToolRequired") and v386 ~= game.Players.LocalPlayer.Character)) then
+                        if v386:FindFirstChild("CharacterModel") and v386:FindFirstChild("CharacterModel"):FindFirstChildOfClass("Highlight") then
+                            v386:FindFirstChild("CharacterModel"):FindFirstChildOfClass("Highlight"):Remove()
+                        end
+                        local v387 = Instance.new("Highlight")
+                        v387.Adornee = v386
+                        v387.Name = "CHICKEN2"
+                        v387.FillTransparency = 0.5
+                        v387.OutlineColor = Color3.fromRGB(255, 255, 255)
+                        v387.OutlineTransparency = 0.5
+                        if v386.Parent.Name ~= "PiggyNPC" then
+                            v387.FillColor = Color3.fromRGB(255, 0, 0)
+                        else
+                            v387.FillColor = Color3.fromRGB(0, 0, 255)
+                        end
+                        v387.Parent = v386
+                    end
+                end
+                task.wait(0.5)
+            end
+        else
+            local v388, v389, v390 = ipairs(workspace:GetDescendants())
+            while true do
+                local v391
+                v390, v391 = v388(v389, v390)
+                if v390 == nil then
+                    break
+                end
+                if v391.Name == "CHICKEN2" then
+                    v391:Destroy()
+                end
+            end
+            _G.Clicker = false
+        end
+    end
+}, "Flag")
+v16:CreateToggle({
+    Name = "Friendly Bots Esp",
+    Description = "Esps Bots That Help You",
+    CurrentValue = false,
+    Callback = function(p392)
+        if p392 then
+            _G.Clicker = true
+            while _G.Clicker == true do
+                local v393 = workspace:GetDescendants()
+                local v394, v395, v396 = ipairs(v393)
+                while true do
+                    local v397
+                    v396, v397 = v394(v395, v396)
+                    if v396 == nil then
+                        break
+                    end
+                    if v397:FindFirstChild("Enemy") and (v397:FindFirstChild("HumanoidRootPart") and (v397:FindFirstChild("ToolRequired") and not v397:FindFirstChild("CHICKEN"))) then
+                        local v398 = Instance.new("Highlight")
+                        v398.Adornee = v397
+                        v398.Name = "CHICKEN"
+                        v398.FillColor = Color3.fromRGB(0, 255, 0)
+                        v398.FillTransparency = 0.5
+                        v398.OutlineColor = Color3.fromRGB(255, 255, 255)
+                        v398.OutlineTransparency = 0.5
+                        v398.Parent = v397
+                    end
+                end
+                task.wait(0.5)
+            end
+        else
+            _G.Clicker = false
+            local v399 = workspace:GetDescendants()
+            local v400, v401, v402 = ipairs(v399)
+            while true do
+                local v403
+                v402, v403 = v400(v401, v402)
+                if v402 == nil then
+                    break
+                end
+                if v403:FindFirstChild("Enemy") and (v403:FindFirstChild("HumanoidRootPart") and (v403:FindFirstChild("ToolRequired") and v403:FindFirstChild("CHICKEN"))) then
+                    v403:FindFirstChild("CHICKEN"):Remove()
+                end
+            end
+        end
+    end
+}, "Flag")
+v16:CreateToggle({
+    Name = "Tools Esp",
+    Description = "Esps All Tools",
+    CurrentValue = false,
+    Callback = function(p404)
+        if p404 then
+            _G.Clicker = true
+            while _G.Clicker == true do
+                local v405, v406, v407 = pairs(game.Workspace.ItemFolder1:GetDescendants())
+                while true do
+                    local v408
+                    v407, v408 = v405(v406, v407)
+                    if v407 == nil then
+                        break
+                    end
+                    if v408.Name == "NewItemPickupScript" or v408.Name == "ItemPickupScript" or v408.Name == "Script" and (v408.Parent.Parent:IsA("Folder") and not v408.Parent:FindFirstChildOfClass("Sound")) then
+                        local v409 = v408.Parent
+                        local v410 = v409:FindFirstChildOfClass("BillboardGui")
+                        v409:FindFirstChildOfClass("Highlight")
+                        if not v410 then
+                            local v411 = Instance.new("BillboardGui")
+                            v411.Size = UDim2.new(4, 0, 1.5, 0)
+                            v411.AlwaysOnTop = true
+                            v411.Adornee = v409
+                            v411.StudsOffset = Vector3.new(0, 3, 0)
+                            v411.MaxDistance = 1000
+                            v411.Parent = v409
+                            local v412 = Instance.new("Frame")
+                            v412.Size = UDim2.new(1, 0, 1, 0)
+                            v412.BackgroundTransparency = 1
+                            v412.Parent = v411
+                            local v413 = Instance.new("TextLabel")
+                            if string.match(v408.Parent.Name, "%d") then
+                                v413.Text = "Item"
+                            else
+                                v413.Text = v409.Name
+                            end
+                            v413.Size = UDim2.new(1, 0, 1, 0)
+                            v413.BackgroundTransparency = 1
+                            v413.Font = Enum.Font.SourceSansBold
+                            v413.TextColor3 = Color3.new(1, 1, 1)
+                            v413.TextStrokeColor3 = Color3.new(0, 0, 0)
+                            v413.TextStrokeTransparency = 0.5
+                            v413.TextSize = 12
+                            v413.TextScaled = true
+                            v413.Parent = v412
+                            local v414 = Instance.new("Highlight")
+                            if v409:FindFirstChildOfClass("ParticleEmitter") then
+                                v414.FillColor = v409:FindFirstChildOfClass("ParticleEmitter").Color.Keypoints[1].Value
+                            else
+                                v414.FillColor = Color3.fromRGB(0, 255, 0)
+                            end
+                            v414.OutlineColor = Color3.new(1, 1, 1)
+                            v414.FillTransparency = 0.6
+                            v414.OutlineTransparency = 0.3
+                            v414.Adornee = v409
+                            v414.Parent = v409
+                        end
+                    end
+                end
+                task.wait(1)
+            end
+        else
+            _G.Clicker = false
+            local v415 = workspace:GetDescendants()
+            local v416, v417, v418 = pairs(v415)
+            while true do
+                local v419
+                v418, v419 = v416(v417, v418)
+                if v418 == nil then
+                    break
+                end
+                if v419.Name == "NewItemPickupScript" or v419.Name == "ItemPickupScript" or v419.Name == "Script" and (v419.Parent.Parent:IsA("Folder") and not v419.Parent:FindFirstChildOfClass("Sound")) then
+                    local v420 = v419.Parent
+                    v420:FindFirstChildOfClass("Highlight"):Remove()
+                    v420:FindFirstChildOfClass("BillboardGui"):Remove()
+                end
+            end
+        end
+    end
+}, "Flag")
+v16:CreateToggle({
+    Name = "Traps Esp",
+    Description = "Esps All Traps",
+    CurrentValue = false,
+    Callback = function(p421)
+        if p421 then
+            _G.Clicker = true
+            while _G.Clicker == true do
+                local v422 = workspace.ItemFolder1:GetDescendants()
+                local v423, v424, v425 = pairs(v422)
+                while true do
+                    local v426
+                    v425, v426 = v423(v424, v425)
+                    if v425 == nil then
+                        break
+                    end
+                    if v426:IsA("Sound") then
+                        local v427 = v426.Parent
+                        local v428 = v427.Parent
+                        if string.find(v427.Name, "Trap") then
+                            local v429 = Instance.new("Highlight")
+                            v429.Name = "CHICKEN4"
+                            v429.FillTransparency = 0.5
+                            Color3.fromRGB(0, 0, 0)
+                            v429.OutlineTransparency = 0.5
+                            v429.FillColor = Color3.fromRGB(255, 255, 255)
+                            v429.Parent = v427
+                            v429.Adornee = v427
+                        elseif string.find(v428.Name, "Trap") then
+                            local v430 = Instance.new("Highlight")
+                            v430.Name = "CHICKEN4"
+                            v430.FillTransparency = 0.5
+                            v430.OutlineColor = Color3.fromRGB(0, 0, 0)
+                            v430.OutlineTransparency = 0.5
+                            v430.FillColor = Color3.fromRGB(255, 255, 255)
+                            v430.Parent = v428
+                            v430.Adornee = v428
+                        end
+                    end
+                end
+                task.wait(1.5)
+            end
+        else
+            _G.Clicker = false
+            local v431, v432, v433 = workspace.ItemFolder1:GetDescendants()
+            while true do
+                local v434
+                v433, v434 = v431(v432, v433)
+                if v433 == nil then
+                    break
+                end
+                if v434.Name == "CHICKEN4" then
+                    v434:Remove()
+                end
+            end
+        end
+    end
+}, "Flag")
+v16:CreateToggle({
+    Name = "Players Esp",
+    Description = "Esps All The Survivors Thats Alive",
+    CurrentValue = false,
+    Callback = function(p435)
+        if p435 then
+            local v436 = game:GetService("Players")
+            local _ = v436.LocalPlayer
+            _G.Clicker = true
+            while _G.Clicker == true do
+                local v437, v438, v439 = ipairs(v436:GetPlayers())
+                while true do
+                    local v440
+                    v439, v440 = v437(v438, v439)
+                    if v439 == nil then
+                        break
+                    end
+                    if v440 ~= game.Players.LocalPlayer and v440.Character and not v440.Character:FindFirstChild("Enemy") then
+                        local v441 = v440.Character
+                        if (v441.HumanoidRootPart.Position - workspace.GameFolder.MainSpawn.Position).Magnitude < 20 then
+                            if existingHighlight then
+                                existingHighlight:Remove()
+                            end
+                        elseif not v441:FindFirstChildOfClass("Highlight") then
+                            local v442 = Instance.new("Highlight")
+                            v442.Adornee = v441
+                            v442.FillColor = Color3.fromRGB(0, 255, 255)
+                            v442.FillTransparency = 0.5
+                            v442.OutlineColor = Color3.fromRGB(255, 255, 255)
+                            v442.OutlineTransparency = 0.5
+                            v442.Parent = v441
+                        end
+                    end
+                end
+                wait(1)
+            end
+        else
+            _G.Clicker = false
+            local v443 = game:GetService("Players")
+            local v444, v445, v446 = ipairs(v443:GetPlayers())
+            while true do
+                local v447
+                v446, v447 = v444(v445, v446)
+                if v446 == nil then
+                    break
+                end
+                local v448 = v447.Character
+                if v448 and (v448.HumanoidRootPart.Position - workspace.GameFolder.MainSpawn.Position).Magnitude >= 20 then
+                    local v449 = v448:FindFirstChildOfClass("Highlight")
+                    if v449 then
+                        v449:Remove()
+                    end
+                end
+            end
+        end
+    end
+}, "Flag")
+v16:CreateToggle({
+    Name = "Traitor Esp",
+    Description = "Esps Traitor No Longer Needs To Be 9:00",
+    CurrentValue = false,
+    Callback = function(p450)
+        if p450 then
+            _G.Clicker = true
+            while _G.Clicker == true do
+                local v451 = game:GetService("Players")
+                local v452, v453, v454 = ipairs(v451:GetPlayers())
+                while true do
+                    local v455
+                    v454, v455 = v452(v453, v454)
+                    if v454 == nil then
+                        break
+                    end
+                    local v456 = v455.Character
+                    if v456:FindFirstChild("Traitor") and not (v456:FindFirstChildOfClass("Highlight") or v456:FindFirstChildOfClass("BillboardGui")) then
+                        local v457 = Instance.new("BillboardGui")
+                        v457.Size = UDim2.new(0, 100, 0, 50)
+                        v457.AlwaysOnTop = true
+                        v457.Adornee = v456.PrimaryPart or v456:FindFirstChildWhichIsA("Part")
+                        v457.Name = v455.DisplayName
+                        v457.Parent = v456
+                        v457.StudsOffset = Vector3.new(0, 3.5, 0)
+                        local v458 = Instance.new("Frame", v457)
+                        v458.Size = UDim2.new(1, 0, 1, 0)
+                        v458.BackgroundTransparency = 1
+                        v458.BorderSizePixel = 0
+                        local v459 = Instance.new("TextLabel", v458)
+                        v459.Text = v455.DisplayName
+                        v459.Size = UDim2.new(1, 0, 1, 0)
+                        v459.BackgroundTransparency = 1
+                        v459.BorderSizePixel = 0
+                        v459.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        v459.TextStrokeTransparency = 0.5
+                        v459.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+                        v459.TextSize = 5
+                        local v460 = Instance.new("Highlight")
+                        v460.Adornee = v456
+                        v460.FillColor = Color3.fromRGB(255, 140, 0)
+                        v460.FillTransparency = 0.5
+                        v460.OutlineColor = Color3.fromRGB(255, 255, 255)
+                        v460.OutlineTransparency = 0.5
+                        v460.Parent = v456
+                    end
+                end
+                wait(1)
+            end
+        else
+            _G.Clicker = false
+            local v461 = game:GetService("Players")
+            local v462, v463, v464 = ipairs(v461:GetPlayers())
+            while true do
+                local v465
+                v464, v465 = v462(v463, v464)
+                if v464 == nil then
+                    break
+                end
+                local v466 = v465.Character
+                if v466:FindFirstChild("Traitor") then
+                    local v467 = v466:FindFirstChildOfClass("Highlight")
+                    if v467 then
+                        v467:Remove()
+                    end
+                    local v468 = v466:FindFirstChildOfClass("BillboardGui")
+                    if v468 then
+                        v468:Remove()
+                    end
+                end
+            end
+        end
+    end
+}, "Flag")
+v18:CreateSection("Moopy Skin Quest [NEW] (Limited)")
+v18:CreateButton({
+    Name = "Auto Find Moopy Plushie [NEW]",
+    Description = "Be In A Book 1 Chapter",
+    Callback = function()
+        found = false
+        local v469, v470, v471 = ipairs(workspace:GetDescendants())
+        while true do
+            local v472
+            v471, v472 = v469(v470, v471)
+            if v471 == nil then
+                break
+            end
+            if v472:IsA("MeshPart") and v472.MeshId == "rbxassetid://87401618341808" then
+                plushie = v472.Parent
+                fireclickdetector(plushie:FindFirstChild("Hitbox"):FindFirstChildOfClass("ClickDetector"))
+                found = true
+                game:GetService("StarterGui"):SetCore("SendNotification", {
+                    Title = "Succesfully Found A Plushie",
+                    Text = "The Script Has Found A Plushie And Collected it For You!",
+                    Icon = "rbxassetid://126985084896106",
+                    Duration = 7,
+                    Button1 = "Okay"
+                })
+            end
+        end
+        if not found then
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+                Title = "You Have Already Collected it",
+                Text = "If You Haven\'t Please Screenshot The Console Log By Saying /console In Chat And Send It To Laptop In Discord.",
+                Icon = "rbxassetid://126985084896106",
+                Duration = 7,
+                Button1 = "Okay"
+            })
+        end
+    end
+})
+v18:CreateSection("Winter Holiday (OPEN)")
+v18:CreateButton({
+    Name = "Auto Win ",
+    Description = "Makes You Auto Win The Winter Holiday Chapter",
+    Callback = function()
+        if workspace:FindFirstChild("WinterHoliday") then
+            local v473, v474, v475 = ipairs(workspace.WinterHoliday:GetDescendants())
+            while true do
+                local v476
+                v475, v476 = v473(v474, v475)
+                if v475 == nil then
+                    break
+                end
+                if v476:IsA("StringValue") and not v476.Parent:IsA("Model") then
+                    e = v476.Value
+                    local v477, v478, v479 = ipairs(workspace.ItemFolder1:GetChildren())
+                    while true do
+                        local v480
+                        v479, v480 = v477(v478, v479)
+                        if v479 == nil then
+                            break
+                        end
+                        if v480.Name == e then
+                            local v481 = game.Players.LocalPlayer.Character
+                            if v481 and v481:FindFirstChild("HumanoidRootPart") then
+                                v481.HumanoidRootPart.CFrame = v480.CFrame
+                                wait(0.15)
+                                if v480:FindFirstChild("ClickDetector") then
+                                    fireclickdetector(v480.ClickDetector)
+                                elseif v480:FindFirstChild("ProximityPrompt") then
+                                    fireproximityprompt(v480.ProximityPrompt)
+                                end
+                                wait(0.3)
+                                local v482 = v476.Parent
+                                v481.HumanoidRootPart.CFrame = v482.CFrame
+                                wait(0.2)
+                                fireproximityprompt(v482:FindFirstChildOfClass("Attachment"):FindFirstChildOfClass("ProximityPrompt"))
+                            end
+                        end
+                    end
+                end
+            end
+            task.wait(3)
+            local v483, v484, v485 = ipairs(workspace.ItemFolder1:GetDescendants())
+            while true do
+                local v486
+                v485, v486 = v483(v484, v485)
+                if v485 == nil then
+                    break
+                end
+                if string.match(v486.Name, "Gift") then
+                    local v487 = game.Players.LocalPlayer.Character
+                    if v487 and v487:FindFirstChild("HumanoidRootPart") then
+                        v487:FindFirstChild("HumanoidRootPart").CFrame = v486.CFrame
+                        wait(0.15)
+                        if v486:FindFirstChild("ClickDetector") then
+                            fireclickdetector(v486.ClickDetector)
+                        elseif v486:FindFirstChild("ProximityPrompt") then
+                            fireproximityprompt(v486.ProximityPrompt)
+                            task.wait(0.2)
+                            game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(2331.04541, 244.92627, - 2108.42944, - 0.955455661, 0.000021426933, - 0.295134634, 2.15929617e-6, 1, 0.0000656101329, 0.295134634, 0.0000620502906, - 0.955455661)
+                            local v488, v489, v490 = pairs(game.Players.LocalPlayer.Backpack:GetChildren())
+                            while true do
+                                local v491
+                                v490, v491 = v488(v489, v490)
+                                if v490 == nil then
+                                    break
+                                end
+                                if v491:IsA("Tool") then
+                                    v491.Parent = game.Players.LocalPlayer.Character
+                                end
+                            end
+                            task.wait(0.8)
+                        end
+                    end
+                end
+            end
+        else
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+                Title = "Wrong Map",
+                Text = "You Need The Map To Be Able To Execute This.",
+                Icon = "rbxassetid://126985084896106",
+                Duration = 7,
+                Button1 = "Okay"
+            })
+        end
+    end
+})
+v18:CreateSection("Piggy.Exe")
+v18:CreateButton({
+    Name = "Teleport To Piggy.Exe HouseHold",
+    Description = "Makes You Join Piggy HouseHold Game",
+    Callback = function()
+        game:GetService("TeleportService"):Teleport(17687435907, game.Players.LocalPlayer)
+    end
+})
+v18:CreateButton({
+    Name = "Keys Gui",
+    Description = "Tools Gui To Obtain All Keys",
+    Callback = function()
+        local v492 = Instance.new("ScreenGui")
+        v492.Name = "PiggyGui"
+        v492.Parent = game.CoreGui
+        local vu493 = Instance.new("Frame", v492)
+        vu493.BackgroundColor3 = Color3.new(0.15, 0.15, 0.15)
+        vu493.Position = UDim2.new(0.21, 10, 0.05, 0)
+        vu493.Size = UDim2.new(0, 500, 0, 310)
+        vu493.Visible = false
+        vu493.Draggable = true
+        vu493.Active = true
+        local v494 = Instance.new("ScrollingFrame", vu493)
+        v494.BackgroundColor3 = Color3.new(0.15, 0.15, 0.15)
+        v494.Position = UDim2.new(0.05, 0, 0.1, 0)
+        v494.Size = UDim2.new(0, 450, 0, 230)
+        v494.CanvasSize = UDim2.new(0, 0, 0, 0)
+        v494.ScrollBarThickness = 8
+        v494.AutomaticCanvasSize = Enum.AutomaticSize.Y
+        local vu495 = Instance.new("TextButton", v492)
+        vu495.Name = "ToggleButton"
+        vu495.Size = UDim2.new(0, 50, 0, 50)
+        vu495.Position = UDim2.new(0.85, 0, 0.133, 0)
+        vu495.Text = "Items"
+        vu495.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+        vu495.TextColor3 = Color3.new(1, 1, 1)
+        vu495.Font = Enum.Font.GothamBold
+        vu495.TextSize = 14
+        vu495.Active = true
+        vu495.BorderSizePixel = 0
+        vu495.BackgroundTransparency = 0.5
+        vu495.ClipsDescendants = true
+        local vu496 = nil
+        local vu497 = nil
+        local vu498 = nil
+        local vu499 = nil
+        local function vu502(p500)
+            local v501 = p500.Position - vu498
+            vu495.Position = UDim2.new(vu499.X.Scale, vu499.X.Offset + v501.X, vu499.Y.Scale, vu499.Y.Offset + v501.Y)
+        end
+        vu495.InputBegan:Connect(function(pu503)
+            if pu503.UserInputType == Enum.UserInputType.MouseButton1 or pu503.UserInputType == Enum.UserInputType.Touch then
+                vu496 = true
+                vu498 = pu503.Position
+                vu499 = vu495.Position
+                pu503.Changed:Connect(function()
+                    if pu503.UserInputState == Enum.UserInputState.End then
+                        vu496 = false
+                    end
+                end)
+            end
+        end)
+        vu495.InputChanged:Connect(function(p504)
+            if p504.UserInputType == Enum.UserInputType.MouseMovement or p504.UserInputType == Enum.UserInputType.Touch then
+                vu497 = p504
+            end
+        end)
+        game:GetService("UserInputService").InputChanged:Connect(function(p505)
+            if p505 == vu497 and vu496 then
+                vu502(p505)
+            end
+        end)
+        vu495.MouseButton1Click:Connect(function()
+            vu493.Visible = not vu493.Visible
+        end)
+        Instance.new("UIGridLayout", v494).CellSize = UDim2.new(0, 90, 0, 75)
+        while not vu493.Visible do
+            task.wait(1)
+        end
+        local v506 = workspace.ItemFolder1:GetDescendants()
+        local v507 = v494:GetChildren()
+        local v508, v509, v510 = ipairs(v507)
+        local v511 = {}
+        while true do
+            local v512
+            v510, v512 = v508(v509, v510)
+            if v510 == nil then
+                break
+            end
+            if v512.ClassName == "TextButton" then
+                v512:Destroy()
+            end
+        end
+        local v513, v514, v515 = ipairs(v506)
+        while true do
+            local v516
+            v515, v516 = v513(v514, v515)
+            if v515 == nil then
+                break
+            end
+            if v516.Name == "ItemPickupScript" then
+                table.insert(v511, v516.Parent)
+            end
+        end
+        local v517, v518, v519 = ipairs(v511)
+        while true do
+            local vu520
+            v519, vu520 = v517(v518, v519)
+            if v519 == nil then
+                break
+            end
+            local v521 = Instance.new("TextButton", v494)
+            v521.Name = "ItemFrame"
+            v521.BackgroundColor3 = Color3.new(1, 1, 1)
+            v521.BackgroundTransparency = 0.95
+            v521.Size = UDim2.new(0, 100, 0, 100)
+            v521.Text = ""
+            local v522 = Instance.new("ViewportFrame", v521)
+            v522.Name = "View"
+            v522.Size = UDim2.new(1, 0, 1, 0)
+            v522.BackgroundTransparency = 1
+            v522.BorderSizePixel = 0
+            vu520:Clone().Parent = v522
+            local v523 = Instance.new("Camera", v522)
+            v523.CameraType = Enum.CameraType.Fixed
+            local v524 = vu520.Position
+            local v525 = v524 + Vector3.new(0, 3, 1)
+            v523.CFrame = CFrame.new(v525, v524)
+            v522.CurrentCamera = v523
+            v521.MouseButton1Down:Connect(function()
+                if vu520:FindFirstChild("ClickDetector") then
+                    local v526 = game.Players.LocalPlayer.Character
+                    if v526 and v526:FindFirstChild("HumanoidRootPart") then
+                        local v527 = v526.HumanoidRootPart.CFrame
+                        wait(0.01)
+                        v526.HumanoidRootPart.CFrame = vu520.CFrame
+                        wait(0.15)
+                        fireclickdetector(vu520.ClickDetector)
+                        wait(0.01)
+                        v526.HumanoidRootPart.CFrame = v527
+                    end
+                end
+            end)
+        end
+    end
+})
+v18:CreateButton({
+    Name = "Teleport To The End",
+    Description = "Teleports You To The Winners Area (Must Have All Keys To Get Badge)",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(184.999969, 17.5, - 98, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    end
+})
+v18:CreateSection("Decay")
+v18:CreateButton({
+    Name = "Fully Auto Finish",
+    Description = "Finishes All Of Decay For You",
+    Callback = function()
+        if workspace.ItemFolder1:FindFirstChild("Crossbow") then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ItemFolder1:FindFirstChild("Crossbow").CFrame
+            task.wait(0.3)
+            game.Workspace.Camera.CFrame = CFrame.new(- 17.5978546, 20.7734413, - 11.4083443, - 0.0565070398, 0.983234167, - 0.173371151, - 6.55190693e-11, 0.173648611, 0.98480773, 0.998402178, 0.055648569, - 0.00981236901)
+            task.wait(0.5)
+            fireproximityprompt(workspace.ItemFolder1.Crossbow.ProximityPrompt)
+        end
+        task.wait(0.5)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ItemFolder1.TunnelKey.CFrame
+        task.wait(0.3)
+        game.workspace.Camera.CFrame = CFrame.new(370.59024, 41.4733772, 322.722961, 0.0808440596, 0.981584132, - 0.173080161, - 6.80299287e-24, 0.173648551, 0.98480773, 0.996726692, - 0.0796158537, 0.0140384557)
+        wait(0.2)
+        fireproximityprompt(workspace.ItemFolder1.TunnelKey.ProximityPrompt)
+        task.wait(0.3)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(592.935913, 38.9809723, 112.740211, - 0.99998796, - 4.76643125e-9, 0.00490529137, - 4.89171414e-9, 1, - 2.5528438e-8, - 0.00490529137, - 2.55521257e-8, - 0.99998796)
+        task.wait(0.1)
+        game.workspace.Camera.CFrame = CFrame.new(593.119568, 41.0125885, 112.37867, - 0.999999821, 0.0000447275634, - 0.000705932674, - 6.73980442e-22, 0.997998893, 0.0632327348, 0.000707348227, 0.0632327199, - 0.997998595)
+        task.wait(0.2)
+        fireproximityprompt(workspace.Bunny.Events.Chase1Event.Doors_Tunnel.KeyDoor.DoorMain.PromptAttachment.DoorPrompt)
+        task.wait(0.3)
+        firetouchinterest(workspace.Bunny.Events.Chase1Event.SafeTrigger, Game.Players.LocalPlayer.Character.HumanoidRootPart, 0)
+        task.wait(0.5)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1140.14856, 53.663517, 414.272217, 0.999653816, 0.0122360205, - 0.0232919808, 4.1359488e-15, 0.885276914, 0.465064198, 0.0263103899, - 0.464903206, 0.884970486)
+        task.wait(0.1)
+        game.workspace.Camera.CFrame = CFrame.new(1140.16016, 51.4309845, 413.829742, 0.999261856, 5.54945672e-8, 0.0384151936, - 5.5715919e-8, 1, 4.69146011e-9, - 0.0384151936, - 6.82833523e-9, 0.999261856)
+        task.wait(0.2)
+        local v528 = {
+            CFrame.new(1139.7205810546875, 52.92449188232422, 415.3273010253906, 0.9938197135925293, 0.012246896512806416, - 0.11032890528440475, 0.04052341729402542, 0.8852769136428833, 0.4632953405380249, 0.10334556549787521, - 0.4649029076099396, 0.879309356212616),
+            vector.create(1140.276611328125, 51.09606170654297, 409.3949890136719),
+            Instance.new("Part", nil),
+            CFrame.new(1139.9083251953125, 50.60262680053711, 409.29498291015625, 0.965938925743103, - 1.6689300537109375e-6, 0.2587701976299286, 0.2587701976299286, 0.000012755393981933594, - 0.9659388661384583, - 1.6689300537109375e-6, 0.9999999403953552, 0.000012755393981933594)
+        }
+        game:GetService("Players").LocalPlayer.Character:WaitForChild("Crossbow"):WaitForChild("FireRemote"):FireServer(unpack(v528))
+        task.wait(0.4)
+        fireproximityprompt(workspace.Bunny.Events.Boarded_EscapeVent_Doors.Vent_Door.VentCover.PromptAttachment.DoorPrompt)
+        task.wait(0.2)
+        firesignal(game:GetService("Players").LocalPlayer.PlayerGui.GameGUI.CrouchButton.MouseButton1Click)
+        task.wait(0.1)
+        game.Players.LocalPlayer.Character.Humanoid:MoveTo(Vector3.new(1139.97217, 51.5109863, 384.531708))
+        task.wait(1.5)
+        firetouchinterest(workspace.Bunny.Events.EscapeTrigger, game.Players.LocalPlayer.Character.HumanoidRootPart, 0)
+    end
+})
+v18:CreateSection("Deliruim (Decay 2)")
+v18:CreateButton({
+    Name = "Fully Auto Finish",
+    Description = "Finishes All Of Deliruim For You (Buggy)",
+    Callback = function()
+        local v529 = Instance.new("Part")
+        v529.Parent = workspace
+        v529.Size = Vector3.new(10, 1.5, 10)
+        v529.Anchored = true
+        v529.CFrame = CFrame.new(- 300.542755, 249.32283, - 594.703308, 0.0289156679, 0.00423026737, - 0.999572933, - 8.49587559e-6, 0.999991059, 0.00423179148, 0.999581873, - 0.000113872826, 0.0289154463)
+        local vu530 = game.Players.LocalPlayer.Character.HumanoidRootPart
+        vu530.CFrame = v529.CFrame + Vector3.new(0, v529.Size.Y / 2 + vu530.Size.Y / 2, 0)
+        task.wait(0.5)
+        firetouchinterest(workspace.Bunny.Events.ApparitionChase.OpenTrigger, game.Players.LocalPlayer.Character.HumanoidRootPart, 0)
+        task.wait(0.5)
+        firetouchinterest(workspace.Bunny.Events.ApparitionChase.EscapeTrigger, game.Players.LocalPlayer.Character.HumanoidRootPart, 0)
+        task.wait(4)
+        local v531 = Instance.new("Part")
+        v531.Parent = game.workspace
+        v531.CFrame = CFrame.new(- 775.366333, 483.500732, - 915.616333, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+        v531.Size = Vector3.new(10, 1.5, 10)
+        v531.Anchored = true
+        task.wait(0.5)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v531.CFrame
+        task.wait(5)
+        firetouchinterest(workspace.Bunny.Events.HandChase1Event.SafeTrigger, game.Players.LocalPlayer.Character.HumanoidRootPart, 0)
+        task.wait(0.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(- 447.220734, 474.880585, - 1669.40247, 0.999161124, 0.00455833133, - 0.0406977534, - 3.51645781e-7, 0.993786871, 0.111299962, 0.0409522355, - 0.111206576, 0.992953181)
+        task.wait(0.3)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Bunny.Events.FinalEvent.StartTrigger.CFrame
+        task.wait(1.8)
+        workspace.Bunny.Events.CageFolder.BotFolder:Remove()
+        _G.Clicker = true
+        coroutine.wrap(function()
+            while _G.Clicker do
+                local v532, v533, v534 = ipairs(workspace.ApparitionNPC:GetDescendants())
+                while true do
+                    local v535
+                    v534, v535 = v532(v533, v534)
+                    if v534 == nil then
+                        break
+                    end
+                    if v535.Name == "Apparition" then
+                        vu530.CFrame = v535.HumanoidRootPart.CFrame
+                        workspace.Camera.CFrame = v535.UpperTorso.CFrame
+                    end
+                end
+                wait(1)
+            end
+        end)()
+        _G.Clicker2 = true
+        while _G.Clicker2 == true do
+            local v536 = game.Players.LocalPlayer
+            if v536 then
+                v536 = game.Players.LocalPlayer.Character
+            end
+            if not v536 or (not game.Players.LocalPlayer:FindFirstChild("Sound") or (game:GetService("Players").LocalPlayer.PlayerGui.GameGUI.MobileShootButton.Visible == false or workspace:FindFirstChild("CutsceneFolder"))) then
+                _G.Clicker2 = false
+                break
+            end
+            local v537 = game:GetService("Players").LocalPlayer:FindFirstChild("PlayerGui"):FindFirstChild("GameGUI"):FindFirstChild("MobileShootButton")
+            if v537 then
+                firesignal(v537.MouseButton1Down)
+            end
+            wait(0.7)
+        end
+    end
+})
+v19:CreateSection("Other Features")
+v19:CreateButton({
+    Name = "Farm Tool",
+    Description = "You Need A Alt In Game And Select The Main Door (Must Be Unlocked)",
+    Callback = function()
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Requirements",
+            Text = "You need an alt or someone in-game for this to work. Choose swarm for best results.",
+            Icon = "rbxassetid://126985084896106",
+            Duration = 7,
+            Button1 = "Okay"
+        })
+        local vu538 = game:GetService("Players").LocalPlayer
+        local vu539 = nil
+        local vu540 = false
+        local vu541 = nil
+        local vu542 = Instance.new("Tool")
+        vu542.Name = "Farm Tool"
+        vu542.ToolTip = "Click the door (must be unlocked) then press Confirm"
+        vu542.RequiresHandle = false
+        local vu543 = Instance.new("Highlight")
+        vu543.FillTransparency = 0.7
+        vu543.OutlineTransparency = 0
+        vu543.FillColor = Color3.fromRGB(0, 255, 255)
+        vu543.OutlineColor = Color3.fromRGB(255, 255, 255)
+        vu543.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+        local vu544 = nil
+        local function vu545()
+            if vu544 and vu544:FindFirstChildOfClass("Highlight") then
+                vu544:FindFirstChildOfClass("Highlight"):Destroy()
+            end
+            vu544 = nil
+        end
+        local function vu547(p546)
+            vu545()
+            if p546 and not vu540 then
+                vu543:Clone().Parent = p546
+                vu544 = p546
+            end
+        end
+        vu542.Activated:Connect(function()
+            if not vu540 then
+                vu539 = vu538:GetMouse().Target
+                if vu539 and vu541 then
+                    vu547(vu539)
+                    vu541.Visible = true
+                end
+            end
+        end)
+        vu542.Unequipped:Connect(function()
+            vu545()
+        end)
+        local v548 = Instance.new("ScreenGui")
+        v548.Name = "FarmControls"
+        local v549 = vu538
+        v548.Parent = vu538.WaitForChild(v549, "PlayerGui")
+        v548.ResetOnSpawn = false
+        vu541 = Instance.new("TextButton")
+        vu541.Name = "Confirm"
+        vu541.Text = "Confirm Door"
+        vu541.Size = UDim2.new(0, 120, 0, 40)
+        vu541.BackgroundColor3 = Color3.new(0, 1, 0)
+        vu541.Position = UDim2.new(1, - 130, 1, - 50)
+        vu541.AnchorPoint = Vector2.new(1, 1)
+        vu541.Visible = false
+        vu541.Parent = v548
+        vu541.MouseButton1Click:Connect(function()
+            if vu539 and not vu540 then
+                vu540 = true
+                game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.SettingsConfig.HardMode.Value = true
+                vu541.Text = "Stop"
+                vu541.BackgroundColor3 = Color3.new(1, 0, 0)
+                _G.Clicker = true
+                spawn(function()
+                    while _G.Clicker do
+                        vu538.Character:WaitForChild("HumanoidRootPart").CFrame = vu539.CFrame
+                        task.wait(0.5)
+                        if game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.Skip then
+                            firesignal(game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.Skip.MouseButton1Click)
+                        end
+                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("JoinGame"):InvokeServer(unpack({
+                            true
+                        }))
+                        task.wait(1)
+                    end
+                end)
+            elseif vu541.Text == "Stop" then
+                vu541.Visible = false
+                _G.Clicker = false
+                game:GetService("Players").LocalPlayer.PlayerGui.MainMenu.SettingsConfig.HardMode.Value = false
+                vu540 = false
+                vu541.Text = "Confirm Door"
+                vu541.BackgroundColor3 = Color3.new(0, 1, 0)
+                vu545()
+                vu542.Parent = nil
+            end
+        end)
+        if vu538.Character then
+            local v550 = vu538
+            vu542.Parent = vu538.FindFirstChildOfClass(v550, "Backpack")
+        end
+    end
+})
+v19:CreateToggle({
+    Name = "Auto Find Blueprint",
+    Description = "Auto Finds All Blueprints For You",
+    CurrentValue = false,
+    Callback = function(p551)
+        if p551 then
+            _G.Clicker = true
+            local v552 = {
+                "http://www.roblox.com/asset/?id=60791940",
+                "rbxassetid://60791940",
+                "60791940"
+            }
+            while _G.Clicker do
+                local v553 = game:GetService("Players").LocalPlayer
+                local v554 = (v553.Character or v553.CharacterAdded:Wait()).HumanoidRootPart
+                local v555, v556, v557 = ipairs(workspace:GetDescendants())
+                local v558 = false
+                while true do
+                    local v559
+                    v557, v559 = v555(v556, v557)
+                    if v557 == nil then
+                        break
+                    end
+                    if v559:IsA("Part") then
+                        local v560 = v559:FindFirstChildOfClass("ClickDetector")
+                        if v560 then
+                            local v561, v562, v563 = ipairs(v559:GetChildren())
+                            while true do
+                                local v564
+                                v563, v564 = v561(v562, v563)
+                                if v563 == nil then
+                                    break
+                                end
+                                if v564:IsA("SpecialMesh") then
+                                    local v565, v566, v567 = ipairs(v552)
+                                    while true do
+                                        local v568
+                                        v567, v568 = v565(v566, v567)
+                                        if v567 == nil then
+                                            break
+                                        end
+                                        if tostring(v564.MeshId):find(v568, 1, true) then
+                                            local v569 = v554.CFrame
+                                            v554.CFrame = v559.CFrame * CFrame.new(0, 3, 0)
+                                            task.wait(0.2)
+                                            fireclickdetector(v560)
+                                            task.wait(0.3)
+                                            v554.CFrame = v569
+                                            v558 = true
+                                            break
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                if v558 then
+                    game:GetService("StarterGui"):SetCore("SendNotification", {
+                        Title = "Found!\226\156\133",
+                        Text = "Successfully collected",
+                        Icon = "https://roblox.com/asset/?id=126985084896106",
+                        Duration = 7,
+                        Button1 = "Okay"
+                    })
+                end
+                task.wait(2)
+            end
+        else
+            _G.Clicker = false
+        end
+    end
+}, "Flag")
+v19:CreateToggle({
+    Name = "Auto Find Pages",
+    Description = "Auto Finds All Pages For You",
+    CurrentValue = false,
+    Callback = function(p570)
+        if p570 then
+            _G.Clicker = true
+            while _G.Clicker == true do
+                local vu571 = "rbxassetid://6714051581"
+                local v572 = game.Players.LocalPlayer
+                local vu573 = (v572.Character or v572.CharacterAdded:Wait()):WaitForChild("HumanoidRootPart")
+                Vector3.new(255, 255, 255)
+                if (function()
+                    local v574 = workspace:GetDescendants()
+                    local v575, v576, v577 = ipairs(v574)
+                    local v578 = false
+                    while true do
+                        local v579
+                        v577, v579 = v575(v576, v577)
+                        if v577 == nil then
+                            break
+                        end
+                        if v579:IsA("Part") then
+                            local v580 = v579:FindFirstChildOfClass("ClickDetector")
+                            v579:FindFirstChildOfClass("TouchTransmitter")
+                            local v581, v582, v583 = ipairs(v579:GetChildren())
+                            while true do
+                                local v584
+                                v583, v584 = v581(v582, v583)
+                                if v583 == nil then
+                                    break
+                                end
+                                if v584:IsA("SpecialMesh") and v584.MeshId == vu571 then
+                                    local v585 = vu573.CFrame
+                                    vu573.CFrame = v579.CFrame + Vector3.new(0, 3, 0)
+                                    wait(0.2)
+                                    fireclickdetector(v580)
+                                    wait(0.3)
+                                    vu573.CFrame = v585
+                                    v578 = true
+                                end
+                            end
+                        end
+                    end
+                    return v578
+                end)() then
+                    game:GetService("StarterGui"):SetCore("SendNotification", {
+                        Title = "Found The Pages Successfully!",
+                        Text = "Found All Pages",
+                        Icon = "https://roblox.com/asset/?id=126985084896106",
+                        Duration = 7,
+                        Button1 = "Okay"
+                    })
+                end
+                task.wait(2)
+            end
+        else
+            _G.Clicker = false
+        end
+    end
+}, "Flag")
+v19:CreateSection("Teleports")
+v19:CreateButton({
+    Name = "Teleport To Piggy Lobby",
+    Description = "Teleports You To The Place Piggy Is First Spawned In",
+    Callback = function()
+        Game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(- 368.912445, - 3.70697975, - 88.2102509, - 0.177849829, - 6.23116847e-8, - 0.984057665, 8.68930528e-8, 1, - 7.90254475e-8, 0.984057665, - 9.95624347e-8, - 0.177849829)
+    end
+})
+v19:CreateButton({
+    Name = "Teleport To Players Lobby",
+    Description = "Teleports You To Where Dead Players Are",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(- 462.430878, - 26.8999672, - 92.9122467, 0.958247006, - 1.92621847e-8, 0.28594166, 4.32109672e-8, 1, - 7.74444473e-8, - 0.28594166, 8.65667289e-8, 0.958247006)
+    end
+})
+v19:CreateButton({
+    Name = "Teleport To Main Menu Place",
+    Description = Nil,
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(- 458.074951, - 9.62249565, 8.91219902, 0.998103261, 2.76764887e-8, - 0.0615624413, - 3.36117942e-8, 1, - 9.53755759e-8, 0.0615624413, 9.72638929e-8, 0.998103261)
+        wait(0.1)
+        local v586 = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+        local v587 = Vector3.new(0, - 15, 0)
+        local v588 = RaycastParams.new()
+        v588.FilterDescendantsInstances = {
+            game.Players.LocalPlayer.Character
+        }
+        v588.FilterType = Enum.RaycastFilterType.Blacklist
+        local v589 = workspace:Raycast(v586, v587, v588)
+        if v589 then
+            local v590 = v589.Instance
+            if v590 and (v590:IsA("Part") and not v590.CanCollide) then
+                v590.CanCollide = true
+            end
+        end
+    end
+})
+v20:CreateSection("Book 1 (Patched Entirely)")
+v20:CreateSection("Book 2")
+v20:CreateButton({
+    Name = "Vote Distorted Holiday (OPEN)",
+    Description = "Votes The 2024 Chirstmas Map",
+    Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("NewVote"):FireServer(unpack({
+            "Map",
+            "DistortedHoliday"
+        }))
+    end
+})
+v20:CreateButton({
+    Name = "Vote Winter Holiday (OPEN)",
+    Description = "Votes The Old Chirstmas Map",
+    Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("NewVote"):FireServer(unpack({
+            "Map",
+            "WinterHoliday"
+        }))
+    end
+})
+v20:CreateButton({
+    Name = "Vote Heist",
+    Description = "Votes The Private Only Map Heist",
+    Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("NewVote"):FireServer(unpack({
+            "Map",
+            "Heist"
+        }))
+    end
+})
+v20:CreateButton({
+    Name = "Vote Distraction",
+    Description = "Votes The Private Only Map Distraction",
+    Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("NewVote"):FireServer(unpack({
+            "Map",
+            "Distraction"
+        }))
+    end
+})
+v17:CreateSection("Features")
+v17:CreateButton({
+    Name = "Show All Limited Skins In Build Shop",
+    Description = "makes all the Limited skins be able to be bought again",
+    Callback = function()
+        local v591, v592, v593 = ipairs(game:GetService("Players").LocalPlayer.PlayerGui.Menu.BlocksFrame.BlockMenu.BlockList:GetChildren())
+        while true do
+            local v594
+            v593, v594 = v591(v592, v593)
+            if v593 == nil then
+                break
+            end
+            if v594:IsA("Frame") then
+                v594.Visible = true
+            end
+        end
+    end
+})
+v21:CreateSection("Made By")
+v21:CreateParagraph({
+    Title = "Made By Zeron",
+    Text = "Script Owner And Creator"
+})
+v21:CreateButton({
+    Name = "...",
+    Description = "Copies My Youtube Channel Link",
+    Callback = function()
+        toclipboard("I NEED UR HELP!")
+    end
+})
+v21:CreateButton({
+    Name = "...",
+    Description = "Copies My Discord Server Link",
+    Callback = function()
+        toclipboard("Help me")
+    end
+})
+v21:CreateButton({
+    Name = "...",
+    Description = "Copies My Scriptblox Account Link",
+    Callback = function()
+        toclipboard("Is here")
+    end
+})
+v22:CreateSection("New Update Logs")
+v22:CreateParagraph({
+    Title = "Update Logs",
+    Text = "Added Auto Find Moopy Plushie For Quest."
+})
