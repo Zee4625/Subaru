@@ -56,14 +56,14 @@ blur.Parent = Lighting
 
 local king = Instance.new("Part", Workspace)
 king.Name = "TheKingInYellow"
-king.Size = Vector3.new(4, 9, 4)
+king.Size = Vector3.new(6, 11, 6)
 king.Anchored = true
 king.CanCollide = false
 king.Transparency = 1 -- Invizibil până la faza de avertizare
 king.Position = root.Position + (root.CFrame.LookVector * 50)
 
 local kingGui = Instance.new("BillboardGui", king)
-kingGui.Size = UDim2.new(4, 0, 6, 0)
+kingGui.Size = UDim2.new(8, 0, 12, 0)
 kingGui.AlwaysOnTop = true
 local kingImg = Instance.new("ImageLabel", kingGui)
 kingImg.Size = UDim2.new(1, 0, 1, 0)
@@ -79,7 +79,7 @@ local function typeWrite(text)
         storyLabel.Text = string.sub(text, 1, i)
         local s = Instance.new("Sound", camera)
         s.SoundId = "rbxassetid://9114221327"
-        s.Volume = 0.3
+        s.Volume = 0.5
         s.PlaybackSpeed = math.random(8, 12)/10
         s:Play()
         Debris:AddItem(s, 0.5)
@@ -162,7 +162,7 @@ function startMadness()
         local distance = (root.Position - king.Position).Magnitude
         
         -- EFECTUL DE DISTANȚĂ INVERSĂ
-        local baseSize = 4
+        local baseSize = 7
         local scaleFactor = baseSize + (distance * 0.6) -- Cu cât ești mai departe, cu atât Billboard-ul e mai mare
         kingGui.Size = UDim2.new(scaleFactor, 0, scaleFactor * 1.5, 0)
 
